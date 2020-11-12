@@ -9,21 +9,21 @@
 ## Actores
 
 - #### Sintomas 
-    ![](https://raw.githubusercontent.com/Dgloor/Taller02-AspectJ/main/Capturas/create_user.jpg)
+    ![](pg)
 
 - #### Puestos
-    ![](https://raw.githubusercontent.com/Dgloor/Taller02-AspectJ/main/Capturas/deposito.png)
+    ![](to.png)
     
 - #### Medicos 
-    ![](https://raw.githubusercontent.com/Dgloor/Taller02-AspectJ/main/Capturas/retiro.jpg)
+    ![](turas/retiro.jpg)
     
 - #### Paciente
-    ![](https://raw.githubusercontent.com/Dgloor/Taller02-AspectJ/main/Capturas/log_txt.png)
+    ![](httJ/main/Capturas/log_txt.png)
     
 ## Autores:
 <div>
-<a title="Hatus Pellegrini" href="https://github.com/joangiemarquez">
-<img src="https://avatars3.githubusercontent.com/u/59121896?s=400&u=2c3ac98b4f9e20b351942a77c3a2a966811149bd&v=4" alt="" width="60" style="border-radius: 50%"/>
+<a title="Hatus Pellegrini" href="https://github.com/HatusP">
+<img src="https://avatars0.githubusercontent.com/u/67929251?s=400&v=4 alt="" width="60" style="border-radius: 50%"/>
 </a>
 
 
