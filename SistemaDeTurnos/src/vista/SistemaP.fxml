@@ -1,27 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.text.Text?>
-
+<?import javafx.scene.layout.VBox?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <top>
-      <HBox prefHeight="21.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="98.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="48.0" fitWidth="268.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../recursos/logo.png" />
-               </image>
-            </ImageView>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="322.9367218017578" />
+            <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #63CBEC#63CBEC;">
+               <children>
+                  <ImageView fitHeight="58.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../recursos/images/logo.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets bottom="2.0" left="15.0" top="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" stylesheets="@../recursos/css/button.css" />
          </children>
-         <BorderPane.margin>
-            <Insets bottom="-5.0" />
-         </BorderPane.margin>
-      </HBox>
+      </VBox>
    </top>
+   <left>
+      <VBox prefHeight="302.0" prefWidth="202.0" stylesheets="@../recursos/css/button.css" BorderPane.alignment="CENTER">
+         <children>
+            <Button id="BTPACIENTE" fx:id="btnRPaciente" mnemonicParsing="false" stylesheets="@../recursos/css/button.css" text="Registro de Paciente" textFill="WHITE" wrapText="true" />
+            <Button id="BTDOCTOR" fx:id="btnRDoctor" mnemonicParsing="false" stylesheets="@../recursos/css/button.css" text="Registro de Doctor" textFill="WHITE" wrapText="true" />
+            <Button fx:id="btnCrearPuesto" mnemonicParsing="false" stylesheets="@../recursos/css/button.css" text="Crear Puesto" textFill="WHITE" wrapText="true" />
+            <Button id="BTELIMINARP" fx:id="btnEliminarPuesto" mnemonicParsing="false" stylesheets="@../recursos/css/button.css" text="Eliminar Puesto" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+         </children>
+      </VBox>
+   </left>
 </BorderPane>
