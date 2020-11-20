@@ -10,5 +10,7 @@ package modelo;
  * @author user
  */
 public class Puesto {
+    private Medico medico;
+    private String puesto;
     
 }
