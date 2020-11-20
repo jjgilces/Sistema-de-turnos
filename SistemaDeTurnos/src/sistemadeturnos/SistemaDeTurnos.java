@@ -40,7 +40,7 @@ public class SistemaDeTurnos extends Application{
         Scene scene = new Scene (root);
         primaryStage.setScene(scene);
         primaryStage.show();*/
-        Parent root = FXMLLoader.load(getClass().getResource("/vista/SistemaP.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/vista/FormularioPaciente.fxml"));
         Scene scene = new Scene(root);
         stage.setTitle("SISTEMA DE CITAS");
         stage.setScene(scene);

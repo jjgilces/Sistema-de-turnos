@@ -5,14 +5,18 @@
  */
 package controlador;
 
-import java.awt.Button;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import modelo.Paciente;
 import modelo.Sintoma;
 
 /**
@@ -21,6 +25,7 @@ import modelo.Sintoma;
  * @author User
  */
 public class FormularioPacienteController implements Initializable {
+
     @FXML
     private TextField txtNombre;
     @FXML
@@ -37,7 +42,6 @@ public class FormularioPacienteController implements Initializable {
     private Button btnCancelar;
     @FXML
     private Button btnRegistrar;
-    
 
     /**
      * Initializes the controller class.
@@ -46,6 +50,49 @@ public class FormularioPacienteController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         cboSintoma.getItems().addAll(Sintoma.sintomas);
-    }    
-    
+    }
+
+    public void clickRegistrar(ActionEvent e) {
+        try {
+            String genero = rbtMasculino.isSelected() ? "Masculino" : "Femenino";
+            Sintoma sintoma = (Sintoma) cboSintoma.getValue();
+            if (Integer.parseInt(txtEdad.getText()) < 0) {
+                throw new IllegalArgumentException();
+            }
+            if (!(isAlpha(txtNombre.getText()) && isAlpha(txtApellidos.getText()))) {
+                throw new IllegalArgumentException();
+
+            }
+            Paciente p1 = new Paciente(txtNombre.getText(), txtApellidos.getText(), Integer.parseInt(txtEdad.getText()), genero, sintoma.getPrioridad());
+
+        } catch (NumberFormatException ex) {
+            txtEdad.clear();
+            mostrarAlerta("Ingrese solo numeros porfavor", AlertType.ERROR);
+        } catch (IllegalArgumentException ex) {
+
+            if (!(isAlpha(txtNombre.getText()) && isAlpha(txtApellidos.getText()))) {
+                txtNombre.clear();
+                txtApellidos.clear();
+                mostrarAlerta("En los campos Nombre y Apellido utilice unicamente letras porfavor.", AlertType.ERROR);
+            }
+            if (Integer.parseInt(txtEdad.getText()) < 0) {
+                txtEdad.clear();
+                mostrarAlerta("Ingrese solo numeros positivos porfavor.", AlertType.ERROR);
+            }
+
+        }
+    }
+
+    public static void mostrarAlerta(String mensaje, AlertType e) {
+        Alert alert = new Alert(e);
+        alert.setTitle("");
+        alert.setHeaderText(null);
+        alert.setContentText(mensaje);
+        alert.showAndWait();
+    }
+
+    public boolean isAlpha(String name) {
+        return name.matches("[a-zA-Z]+");
+    }
+
 }

@@ -14,11 +14,11 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.FormularioPacienteController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #63CBEC#63CBEC;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.FormularioPacienteController">
    <children>
       <BorderPane layoutY="-2.0" prefHeight="400.0" prefWidth="600.0">
          <top>
-            <Label prefHeight="54.0" prefWidth="457.0" text="FORMULARIO REGISTRO DE PACIENTE" BorderPane.alignment="CENTER">
+            <Label prefHeight="54.0" prefWidth="457.0" style="-fx-background-color: #f5f3ed;" text="FORMULARIO REGISTRO DE PACIENTE" BorderPane.alignment="CENTER">
                <font>
                   <Font name="Cambria Bold" size="25.0" />
                </font>
@@ -111,7 +111,7 @@
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0" BorderPane.alignment="CENTER">
                <children>
                   <Button fx:id="btnCancelar" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Cancelar" />
-                  <Button fx:id="btnRegistrar" mnemonicParsing="false" text="Registrar" />
+                  <Button fx:id="btnRegistrar" mnemonicParsing="false" onAction="#clickRegistrar" text="Registrar" />
                </children>
             </HBox>
          </bottom>
