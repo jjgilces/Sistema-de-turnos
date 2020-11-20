@@ -5,10 +5,14 @@
  */
 package controlador;
 
+import java.awt.event.ActionEvent;
 import java.net.URL;
+import java.util.LinkedList;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-
+import modelo.Medico;
+import javafx.scene.control.TextField;
 /**
  * FXML Controller class
  *
@@ -16,12 +20,19 @@ import javafx.fxml.Initializable;
  */
 public class FormularioDrController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
+    @FXML
+    public TextField txtNombre;
+    
+    
+    @FXML
+    public TextField txtApellido;
+    
+    public LinkedList<Medico> med = new LinkedList<>();
     @Override
+   
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
     
-}
+    
+    }

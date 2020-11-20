@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.SistemaPController">
    <top>
       <VBox prefHeight="98.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
@@ -31,7 +31,7 @@
    <left>
       <VBox prefHeight="302.0" prefWidth="202.0" stylesheets="@../recursos/css/button.css" BorderPane.alignment="CENTER">
          <children>
-            <Button id="BTPACIENTE" fx:id="btnRPaciente" mnemonicParsing="false" stylesheets="@../recursos/css/button.css" text="Registro de Paciente" textFill="WHITE" wrapText="true" />
+            <Button id="BTPACIENTE" fx:id="btnRPaciente" mnemonicParsing="false" onAction="#newWindow" stylesheets="@../recursos/css/button.css" text="Registro de Paciente" textFill="WHITE" wrapText="true" />
             <Button id="BTDOCTOR" fx:id="btnRDoctor" mnemonicParsing="false" stylesheets="@../recursos/css/button.css" text="Registro de Doctor" textFill="WHITE" wrapText="true" />
             <Button fx:id="btnCrearPuesto" mnemonicParsing="false" stylesheets="@../recursos/css/button.css" text="Crear Puesto" textFill="WHITE" wrapText="true" />
             <Button id="BTELIMINARP" fx:id="btnEliminarPuesto" mnemonicParsing="false" stylesheets="@../recursos/css/button.css" text="Eliminar Puesto" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
