@@ -27,7 +27,7 @@
                         <Image url="@../recursos/doctor.png" />
                      </image>
                   </ImageView>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" Registro Doctor" textAlignment="CENTER" wrappingWidth="454.0703125">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Formulario de Registro-Doctor" textAlignment="CENTER" wrappingWidth="454.0703125">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="32.0" />
                      </font>
@@ -69,8 +69,8 @@
                <children>
                   <ButtonBar prefHeight="63.0" prefWidth="350.0">
                     <buttons>
-                      <Button mnemonicParsing="false" styleClass="button-clear" stylesheets="@../styles/formulariodr.css" text="Cancelar" />
-                        <Button mnemonicParsing="false" stylesheets="@../styles/formulariodr.css" text="Guardar" />
+                      <Button mnemonicParsing="false" styleClass="button-clear" stylesheets="@../styles/formulariodr.css" text="Clear" />
+                        <Button mnemonicParsing="false" stylesheets="@../styles/formulariodr.css" text="Submit" />
                     </buttons>
                   </ButtonBar>
                </children>
