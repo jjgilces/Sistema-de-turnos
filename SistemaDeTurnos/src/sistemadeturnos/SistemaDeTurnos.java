@@ -18,6 +18,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import modelo.Sintoma;
 
 /**
  *
@@ -29,6 +30,7 @@ public class SistemaDeTurnos extends Application{
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Sintoma.llenarSintomas();
         launch(args);
     }
     @Override
