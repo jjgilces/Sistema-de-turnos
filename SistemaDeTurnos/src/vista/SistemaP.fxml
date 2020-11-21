@@ -36,7 +36,7 @@
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin></Button>
-            <Button id="BTDOCTOR" fx:id="btnRDoctor" mnemonicParsing="false" stylesheets="@../recursos/css/button.css" text="Registro de Doctor" textFill="WHITE" wrapText="true">
+            <Button id="BTDOCTOR" fx:id="btnRDoctor" mnemonicParsing="false" onAction="#newWindow" stylesheets="@../recursos/css/button.css" text="Registro de Doctor" textFill="WHITE" wrapText="true">
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin></Button>

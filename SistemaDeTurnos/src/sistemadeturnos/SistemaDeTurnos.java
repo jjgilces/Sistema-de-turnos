@@ -1,17 +1,6 @@
 
 package sistemadeturnos;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import static java.nio.file.Files.walk;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
@@ -32,7 +21,7 @@ public class SistemaDeTurnos extends Application{
         launch(args);
     }
     @Override
-        public void start(Stage stage) throws Exception {
+    public void start(Stage stage) throws Exception {
         /*FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/FormularioDr.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene (root);
