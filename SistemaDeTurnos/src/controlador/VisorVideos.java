@@ -34,12 +34,11 @@ public class VisorVideos {
 
     
     public void initMediaPlayer(){
-        mediaPlayer = new MediaPlayer(new Media(new File(("src/recursos/videos/video1.mp4")).toURI().toString()));
-        mediaPlayer.setAutoPlay(true);
-//        mediaPlayer.setOnEndOfMedia(() -> {
-//            initMediaPlayer(mediaView);
-//        });
-//        mediaVideo.setMediaPlayer(mediaPlayer);
+        String file = this.getClass().getResource("/recursos/videos/video1.mp4").toExternalForm();
+          Media media = new Media(file);
+          mediaPlayer = new MediaPlayer(media);
+          mediaPlayer.setAutoPlay(true);
+          mediaView.setMediaPlayer(mediaPlayer);
        
     }
     private void initMediaPlayer(final MediaView mediaView, final Iterator<String> urls) {
@@ -55,19 +54,5 @@ public class VisorVideos {
         
 
     }
-     public static CircularSimplyLinkedList<String> leerVideos(){
-        CircularSimplyLinkedList<String> videos=new CircularSimplyLinkedList<>();
-        try(BufferedReader bf=new BufferedReader(new FileReader("src/recursos/archivos/videos.txt"))){
-            String linea;
-            while((linea=bf.readLine())!=null){
-                videos.addLast(linea);
-            }
-        }catch(FileNotFoundException e){
-            System.out.println(e.getMessage());
-        }catch(IOException ex){
-            System.out.println(ex.getMessage());
-        }
-        
-        return videos;
-    }
+   
 }

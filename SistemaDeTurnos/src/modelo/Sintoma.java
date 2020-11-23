@@ -27,21 +27,6 @@ public class Sintoma {
         this.prioridad = prioridad;
     }
     
-    public static void llenarSintomas(){
-        try {
-            List<String> lineas = Files.readAllLines(Paths.get("src/recursos/sintomas.txt"));
-            for(String l : lineas){
-                String[] separado = l.split("\\|");
-                
-                sintomas.add(new Sintoma(separado[0],Integer.parseInt(separado[1].trim())));
-            }
-        } catch (IOException ex) {
-            System.out.println(ex.getCause());
-            Logger.getLogger(Sintoma.class.getName()).log(Level.SEVERE, null, ex);
-            
-        }
-    }
-
     public String getNombre() {
         return nombre;
     }

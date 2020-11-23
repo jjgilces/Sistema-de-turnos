@@ -46,11 +46,9 @@ public class SistemaPController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {  
-//        MediaPlayer mediaPlayer = new MediaPlayer(new Media(((getClass().getResource("/vista/SistemaP.fxml"))).toURI().toString()));
           String file = this.getClass().getResource("/recursos/videos/video1.mp4").toExternalForm();
           Media media = new Media(file);
           mediaPlayer = new MediaPlayer(media);
-//        mediaPlayer = new MediaPlayer(new Media(this.getClass().getResource("video1.mp4").toExternalForm()));
           mediaPlayer.setAutoPlay(true);
           mediaView.setMediaPlayer(mediaPlayer);
  

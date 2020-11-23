@@ -1,0 +1,17 @@
+vómito | 1
+fiebre | 0
+resfrio | 3
+tos | 4
+diarrea | 1
+fatiga | 4
+dolor abdominal | 3
+escalofríos | 2
+dificultad para respirar | 3
+dolor muscular | 5
+dolor de cabeza | 3
+pérdida del olfato y gusto | 0
+dolor de gargante | 2
+sangrado en heces | 1
+visión borrosa | 3
+dolor detrás de los ojo | 2
+

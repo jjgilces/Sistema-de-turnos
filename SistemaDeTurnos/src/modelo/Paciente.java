@@ -22,7 +22,7 @@ public class Paciente {
 
     @Override
     public String toString() {
-        return "Paciente{" + "nombres=" + nombres + ", apellidos=" + apellidos + ", edad=" + edad + ", genero=" + genero + ", prioridad=" + prioridad + '}';
+        return  nombres + apellidos ;
     }
     
     
