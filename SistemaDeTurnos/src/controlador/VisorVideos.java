@@ -22,17 +22,14 @@ import javafx.scene.media.MediaPlayer;
  * @author user
  */
 public class VisorVideos {
-    private MediaView mediaVideo;
+    private MediaView mediaView;
     private Media media;
     private MediaPlayer mediaPlayer;
 
     
-//    public VisorVideos(){
-//        createMediaView(leerVideos());   
-//    }
     
     public VisorVideos(MediaView mediaVideo){
-        this.mediaVideo = mediaVideo;
+        this.mediaView = mediaVideo;
     }
 
     
@@ -42,11 +39,22 @@ public class VisorVideos {
 //        mediaPlayer.setOnEndOfMedia(() -> {
 //            initMediaPlayer(mediaView);
 //        });
-        mediaVideo.setMediaPlayer(mediaPlayer);
+//        mediaVideo.setMediaPlayer(mediaPlayer);
        
     }
-    
-    
+    private void initMediaPlayer(final MediaView mediaView, final Iterator<String> urls) {
+//            MediaPlayer mediaPlayer = new MediaPlayer(new Media(this.getClass().getResource(urlsVideos.next()).toExternalForm()));
+            mediaPlayer.setAutoPlay(true);
+            mediaPlayer.setOnEndOfMedia(new Runnable() {
+                @Override
+                public void run() {
+                    initMediaPlayer(mediaView, (Iterator<String>) urls);
+                }
+            });
+            mediaView.setMediaPlayer(mediaPlayer);
+        
+
+    }
      public static CircularSimplyLinkedList<String> leerVideos(){
         CircularSimplyLinkedList<String> videos=new CircularSimplyLinkedList<>();
         try(BufferedReader bf=new BufferedReader(new FileReader("src/recursos/archivos/videos.txt"))){

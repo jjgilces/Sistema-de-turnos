@@ -17,10 +17,10 @@
 
 .button:hover {
     -fx-background-color: 
-        linear-gradient(from 0% 93% to 0% 100%, #a34313 0%, #903b12 100%),
-        #9d4024,
-        #d86e3a,
-        radial-gradient(center 50% 50%, radius 100%, #ea7f4b, #c54e2c);
+        linear-gradient(from 0% 93% to 0% 100%, #4071C4 0%, #4091C4 100%),
+        #4071C4,
+        #4091C4,
+        radial-gradient(center 50% 50%, radius 100%, #4091C4, #4071C4);
 }
 .button:pressed {
     -fx-padding: 10 15 13 15;

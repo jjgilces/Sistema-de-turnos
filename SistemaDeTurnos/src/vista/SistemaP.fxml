@@ -8,9 +8,11 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.SistemaPController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.SistemaPController">
    <top>
       <VBox prefHeight="98.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
@@ -30,7 +32,7 @@
       </VBox>
    </top>
    <left>
-      <VBox prefHeight="117.0" prefWidth="202.0" stylesheets="@../recursos/css/button.css" BorderPane.alignment="CENTER">
+      <VBox prefHeight="247.0" prefWidth="162.0" stylesheets="@../recursos/css/button.css" BorderPane.alignment="CENTER">
          <children>
             <Button id="BTPACIENTE" fx:id="btnRPaciente" mnemonicParsing="false" stylesheets="@../recursos/css/button.css" text="Registro de Paciente" textFill="WHITE" wrapText="true">
                <VBox.margin>
@@ -58,7 +60,7 @@
       <VBox prefHeight="55.0" prefWidth="600.0" style="-fx-background-color: #63CBEC#63CBEC;" BorderPane.alignment="CENTER" />
    </bottom>
    <right>
-      <TableView prefHeight="247.0" prefWidth="198.0" BorderPane.alignment="CENTER">
+      <TableView prefHeight="237.0" prefWidth="182.0" BorderPane.alignment="CENTER">
         <columns>
           <TableColumn prefWidth="100.0" text="TURNO" />
           <TableColumn maxWidth="4000.0" prefWidth="100.0" text="PUESTO" />
@@ -68,4 +70,11 @@
          </BorderPane.margin>
       </TableView>
    </right>
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <MediaView fx:id="mediaView" fitHeight="200.0" fitWidth="200.0" layoutX="15.0" layoutY="47.0" />
+         </children>
+      </Pane>
+   </center>
 </BorderPane>
