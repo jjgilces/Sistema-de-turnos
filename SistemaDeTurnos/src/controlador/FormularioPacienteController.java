@@ -7,6 +7,7 @@ package controlador;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -16,6 +17,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import modelo.Paciente;
 import modelo.Sintoma;
 
@@ -85,14 +87,20 @@ public class FormularioPacienteController implements Initializable {
 
     public static void mostrarAlerta(String mensaje, AlertType e) {
         Alert alert = new Alert(e);
-        alert.setTitle("");
-        alert.setHeaderText(null);
+        
+        alert.setTitle("Error!");
+        alert.setHeaderText("Hubo un error en el ingreso de datos!");
         alert.setContentText(mensaje);
         alert.showAndWait();
     }
 
     public boolean isAlpha(String name) {
         return name.matches("[a-zA-Z]+");
+    }
+
+    public void clickSalir(ActionEvent e) {
+        Stage stage = (Stage) btnCancelar.getScene().getWindow();
+        stage.close();
     }
 
 }

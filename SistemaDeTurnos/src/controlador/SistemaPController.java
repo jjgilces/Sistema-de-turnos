@@ -1,11 +1,11 @@
-
 package controlador;
-
 
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -40,9 +40,8 @@ public class SistemaPController implements Initializable {
     private Button btnEliminarPuesto;
     @FXML
     private MediaView mediaView;
-    
+
     private MediaPlayer mediaPlayer;
-    
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {  
@@ -64,5 +63,17 @@ public class SistemaPController implements Initializable {
         stage.show();
     }
 
-   
+    public void cambioVentanaPaciente(ActionEvent e) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/vista/FormularioPaciente.fxml"));
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
+            stage.setTitle("Formulario Paciente");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(SistemaPController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
 }

@@ -110,7 +110,7 @@
          <bottom>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="btnCancelar" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Cancelar" />
+                  <Button fx:id="btnCancelar" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#clickSalir" text="Cancelar" />
                   <Button fx:id="btnRegistrar" mnemonicParsing="false" onAction="#clickRegistrar" text="Registrar" />
                </children>
             </HBox>

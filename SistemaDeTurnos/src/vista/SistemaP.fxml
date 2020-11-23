@@ -34,7 +34,7 @@
    <left>
       <VBox prefHeight="247.0" prefWidth="162.0" stylesheets="@../recursos/css/button.css" BorderPane.alignment="CENTER">
          <children>
-            <Button id="BTPACIENTE" fx:id="btnRPaciente" mnemonicParsing="false" stylesheets="@../recursos/css/button.css" text="Registro de Paciente" textFill="WHITE" wrapText="true">
+            <Button id="BTPACIENTE" fx:id="btnRPaciente" mnemonicParsing="false" onAction="#cambioVentanaPaciente" stylesheets="@../recursos/css/button.css" text="Registro de Paciente" textFill="WHITE" wrapText="true">
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin></Button>
