@@ -12,6 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.media.MediaView?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.SistemaPController">
    <top>
@@ -27,6 +28,14 @@
                         <Insets bottom="2.0" left="15.0" top="5.0" />
                      </HBox.margin>
                   </ImageView>
+                  <Text fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Clínica " textAlignment="CENTER" wrappingWidth="396.53675842285156">
+                     <HBox.margin>
+                        <Insets left="30.0" top="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Candara Light" size="64.0" />
+                     </font>
+                  </Text>
                </children>
             </HBox>
          </children>
