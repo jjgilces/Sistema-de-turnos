@@ -6,6 +6,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.beans.binding.Bindings;
+import javafx.beans.property.DoubleProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,6 +21,7 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import static sistemadeturnos.Data.videos;
 
 /**
  * FXML Controller class
@@ -44,15 +47,11 @@ public class SistemaPController implements Initializable {
     private MediaPlayer mediaPlayer;
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {  
-          String file = this.getClass().getResource("/recursos/videos/video1.mp4").toExternalForm();
-          Media media = new Media(file);
-          mediaPlayer = new MediaPlayer(media);
-          mediaPlayer.setAutoPlay(true);
-          mediaView.setMediaPlayer(mediaPlayer);
- 
-    }    
-    
+    public void initialize(URL url, ResourceBundle rb) {
+        new VisorVideos(mediaView).createMediaView(videos);
+
+    }
+
     @FXML
     void newWindow(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/vista/FormularioDr.fxml"));

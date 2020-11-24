@@ -20,6 +20,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import modelo.Paciente;
 import modelo.Sintoma;
+import static sistemadeturnos.Data.sintomas;
 
 /**
  * FXML Controller class
@@ -51,7 +52,7 @@ public class FormularioPacienteController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        cboSintoma.getItems().addAll(Sintoma.sintomas);
+        cboSintoma.getItems().addAll(sintomas);
     }
 
     public void clickRegistrar(ActionEvent e) {

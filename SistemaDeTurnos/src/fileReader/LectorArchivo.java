@@ -11,6 +11,6 @@ import java.util.LinkedList;
  *
  * @author user
  */
-public interface LectorArchivo {
-     void LeerArchivo(String s);
+public  interface LectorArchivo {
+      void leerArchivo();
 }

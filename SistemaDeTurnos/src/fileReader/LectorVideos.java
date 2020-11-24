@@ -11,6 +11,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.LinkedList;
+import static sistemadeturnos.Data.videos;
 
 /**
  *
@@ -20,7 +21,6 @@ public class LectorVideos {
 
    
      public static CircularSimplyLinkedList<String> leerArchivoVideos(){
-        CircularSimplyLinkedList<String> videos=new CircularSimplyLinkedList<>();
         try(BufferedReader bf=new BufferedReader(new FileReader("src/recursos/archivos/videos.txt"))){
             String linea;
             while((linea=bf.readLine())!=null){

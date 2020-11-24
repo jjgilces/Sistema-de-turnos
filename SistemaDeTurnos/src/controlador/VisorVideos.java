@@ -5,14 +5,10 @@
  */
 package controlador;
 
+import TDA.CircularSimplyLinkedList;
+import java.io.File;
 import javafx.fxml.FXML;
 import javafx.scene.media.MediaView;
-import TDA.CircularSimplyLinkedList;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.Iterator;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -33,26 +29,36 @@ public class VisorVideos {
     }
 
     
-    public void initMediaPlayer(){
-        String file = this.getClass().getResource("/recursos/videos/video1.mp4").toExternalForm();
-          Media media = new Media(file);
-          mediaPlayer = new MediaPlayer(media);
-          mediaPlayer.setAutoPlay(true);
-          mediaView.setMediaPlayer(mediaPlayer);
-       
-    }
-    private void initMediaPlayer(final MediaView mediaView, final Iterator<String> urls) {
-//            MediaPlayer mediaPlayer = new MediaPlayer(new Media(this.getClass().getResource(urlsVideos.next()).toExternalForm()));
-            mediaPlayer.setAutoPlay(true);
-            mediaPlayer.setOnEndOfMedia(new Runnable() {
-                @Override
-                public void run() {
-                    initMediaPlayer(mediaView, (Iterator<String>) urls);
-                }
-            });
-            mediaView.setMediaPlayer(mediaPlayer);
-        
+//    public void initMediaPlayer(){
+//        String file = this.getClass().getResource("/recursos/videos/video1.mp4").toExternalForm();
+//        Media media = new Media(file);
+//        mediaPlayer = new MediaPlayer(media);
+//        mediaPlayer.setAutoPlay(true);
+//        mediaView.setMediaPlayer(mediaPlayer);
+//       
+//    }
 
+    
+    private void initMediaPlayer(Iterator<String> iterador){
+        if (iterador.hasNext()){
+        mediaPlayer = new MediaPlayer(new Media(new File(("src/recursos/videos/"+iterador.next())).toURI().toString()));
+        mediaPlayer.setAutoPlay(true);
+        mediaPlayer.setOnEndOfMedia(() -> {
+            initMediaPlayer( iterador);
+        });
+        mediaView.setMediaPlayer(mediaPlayer);
+    }}
+    
+    public void createMediaView(CircularSimplyLinkedList videos){
+        initMediaPlayer( videos.iterator());
+        mediaView.setOnMouseClicked(e->{
+            if(mediaView.getMediaPlayer().getStatus()==MediaPlayer.Status.PLAYING){
+                mediaView.getMediaPlayer().pause();
+            }else if(mediaView.getMediaPlayer().getStatus()==MediaPlayer.Status.PAUSED){
+                
+                mediaView.getMediaPlayer().play();
+            }
+        });
     }
-   
+    
 }

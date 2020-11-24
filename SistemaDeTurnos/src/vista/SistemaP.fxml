@@ -7,16 +7,17 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.SistemaPController">
    <top>
       <VBox prefHeight="98.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox prefHeight="86.0" prefWidth="600.0" style="-fx-background-color: #63CBEC#63CBEC;">
+            <HBox prefHeight="79.0" prefWidth="600.0" style="-fx-background-color: #63CBEC#63CBEC;">
                <children>
                   <ImageView fitHeight="58.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -37,7 +38,10 @@
             <Button id="BTPACIENTE" fx:id="btnRPaciente" mnemonicParsing="false" onAction="#cambioVentanaPaciente" stylesheets="@../recursos/css/button.css" text="Registro de Paciente" textFill="WHITE" wrapText="true">
                <VBox.margin>
                   <Insets bottom="10.0" />
-               </VBox.margin></Button>
+               </VBox.margin>
+               <font>
+                  <Font size="10.0" />
+               </font></Button>
             <Button id="BTDOCTOR" fx:id="btnRDoctor" mnemonicParsing="false" onAction="#newWindow" stylesheets="@../recursos/css/button.css" text="Registro de Doctor" textFill="WHITE" wrapText="true">
                <VBox.margin>
                   <Insets bottom="10.0" />
@@ -60,21 +64,28 @@
       <VBox prefHeight="55.0" prefWidth="600.0" style="-fx-background-color: #63CBEC#63CBEC;" BorderPane.alignment="CENTER" />
    </bottom>
    <right>
-      <TableView prefHeight="237.0" prefWidth="182.0" BorderPane.alignment="CENTER">
+      <TableView prefHeight="237.0" prefWidth="178.0" BorderPane.alignment="CENTER">
         <columns>
           <TableColumn prefWidth="100.0" text="TURNO" />
           <TableColumn maxWidth="4000.0" prefWidth="100.0" text="PUESTO" />
         </columns>
          <BorderPane.margin>
-            <Insets bottom="10.0" right="10.0" />
+            <Insets bottom="10.0" left="10.0" right="10.0" />
          </BorderPane.margin>
       </TableView>
    </right>
    <center>
-      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <FlowPane fx:id="mediaViewPane" prefHeight="247.0" prefWidth="70.0" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </padding>
          <children>
-            <MediaView fx:id="mediaView" fitHeight="200.0" fitWidth="200.0" layoutX="15.0" layoutY="47.0" />
+            <MediaView fx:id="mediaView" fitHeight="280.0" fitWidth="220.0">
+               <FlowPane.margin>
+                  <Insets right="15.0" top="15.0" />
+               </FlowPane.margin>
+            </MediaView>
          </children>
-      </Pane>
+      </FlowPane>
    </center>
 </BorderPane>

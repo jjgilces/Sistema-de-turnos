@@ -20,7 +20,6 @@ import java.util.logging.Logger;
 public class Sintoma {
     private String nombre;
     private int prioridad;
-    public static List<Sintoma> sintomas = new ArrayList<>();
 
     public Sintoma(String nombre, int prioridad) {
         this.nombre = nombre;

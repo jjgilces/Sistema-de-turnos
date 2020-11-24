@@ -13,30 +13,16 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelo.Sintoma;
-import static modelo.Sintoma.sintomas;
+import static sistemadeturnos.Data.sintomas;
+
 
 /**
  *
  * @author user
  */
-public class LectorSintomas implements LectorArchivo{
-     public static void llenarSintomas(){
-        try {
-            List<String> lineas = Files.readAllLines(Paths.get("src/recursos/sintomas.txt"));
-            for(String l : lineas){
-                String[] separado = l.split("\\|");
-                
-                sintomas.add(new Sintoma(separado[0],Integer.parseInt(separado[1].trim())));
-            }
-        } catch (IOException ex) {
-            System.out.println(ex.getCause());
-            Logger.getLogger(Sintoma.class.getName()).log(Level.SEVERE, null, ex);
-            
-        }
-    }
+public class LectorSintomas{
 
-    @Override
-    public void LeerArchivo(String s) {
+    public static void leerArchivo() {
          try {
             List<String> lineas = Files.readAllLines(Paths.get("src/recursos/sintomas.txt"));
             for(String l : lineas){
@@ -49,6 +35,5 @@ public class LectorSintomas implements LectorArchivo{
             Logger.getLogger(Sintoma.class.getName()).log(Level.SEVERE, null, ex);
             
         }
-  
-    }
+    } 
 }
