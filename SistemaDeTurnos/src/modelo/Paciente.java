@@ -13,6 +13,7 @@ public class Paciente implements Serializable {
     private int edad;
     private String genero;
     private int prioridad;
+    private Sintoma sintoma;
 
     public Paciente(String nombres, String apellidos, int edad, String genero, int prioridad)  {
         this.nombres = nombres;
@@ -65,6 +66,14 @@ public class Paciente implements Serializable {
 
     public void setPrioridad(int prioridad) {
         this.prioridad = prioridad;
+    }
+
+    public Sintoma getSintoma() {
+        return sintoma;
+    }
+
+    public void setSintoma(Sintoma sintoma) {
+        this.sintoma = sintoma;
     }
     
     

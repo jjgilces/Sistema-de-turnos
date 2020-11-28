@@ -53,7 +53,7 @@ public class SistemaPController implements Initializable {
     }
 
     @FXML
-    void newWindow(ActionEvent event) throws IOException {
+    public void newWindow(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/vista/FormularioDr.fxml"));
         Stage stage = new Stage();
         Scene scene = new Scene(root);

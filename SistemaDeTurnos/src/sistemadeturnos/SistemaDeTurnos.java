@@ -37,7 +37,7 @@ public class SistemaDeTurnos extends Application{
     }
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/vista/Atencion.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/vista/SistemaP.fxml"));
         Scene scene = new Scene(root);
         stage.setTitle("SISTEMA DE CITAS");
         stage.setScene(scene);
