@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<FlowPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: DCEDFB;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Atender Paciente" textAlignment="RIGHT">
+         <font>
+            <Font name="Century" size="43.0" />
+         </font>
+      </Text>
+      <GridPane alignment="CENTER_LEFT" prefHeight="132.0" prefWidth="600.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="527.6666870117188" minWidth="10.0" prefWidth="326.39996337890625" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="637.9449462890625" minWidth="10.0" prefWidth="274.4000366210937" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="51.333343505859375" minHeight="10.0" prefHeight="50.4" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="42.4" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="38.0" minHeight="0.0" prefHeight="38.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <HBox alignment="CENTER" prefHeight="168.0" prefWidth="527.0">
+               <children>
+                  <Label prefHeight="26.0" prefWidth="121.0" text="Nombre:">
+                     <HBox.margin>
+                        <Insets left="25.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Sylfaen" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField id="txtNombrePaciente" fx:id="txtNombrePaciente" disable="true" prefHeight="30.0" prefWidth="206.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+               </children>
+               <padding>
+                  <Insets top="15.0" />
+               </padding>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+               <children>
+                  <Label layoutX="50.0" prefHeight="26.0" prefWidth="121.0" text="Apellido:">
+                     <HBox.margin>
+                        <Insets left="25.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Sylfaen" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField id="txtApellidoPaciente" fx:id="txtApellidoPaciente" disable="true" prefHeight="30.0" prefWidth="198.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+               </children>
+               <padding>
+                  <Insets top="15.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="35.0" GridPane.rowIndex="2">
+               <children>
+                  <Label prefHeight="26.0" prefWidth="85.0" text="Síntoma:">
+                     <HBox.margin>
+                        <Insets left="25.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Sylfaen" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField id="txtSintoma" fx:id="txtSintoma" disable="true" prefHeight="30.0" prefWidth="194.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+               </children>
+               <padding>
+                  <Insets top="15.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="47.0" prefWidth="574.0" spacing="50.0" GridPane.columnIndex="1">
+               <children>
+                  <Label text="Edad: ">
+                     <HBox.margin>
+                        <Insets left="25.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Sylfaen" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField id="txtEdad" fx:id="txtEdad" disable="true" prefHeight="28.0" prefWidth="107.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+               </children>
+               <padding>
+                  <Insets top="15.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="0.0" prefWidth="638.0" spacing="25.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Label text="Género:  ">
+                     <HBox.margin>
+                        <Insets left="25.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Sylfaen" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField id="txtGenero" fx:id="txtGenero" disable="true" prefHeight="30.0" prefWidth="136.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+               </children>
+               <padding>
+                  <Insets top="15.0" />
+               </padding>
+            </HBox>
+         </children>
+      </GridPane>
+      <HBox prefHeight="72.0" prefWidth="598.0">
+         <children>
+            <Text fill="#05212c" strokeType="OUTSIDE" strokeWidth="0.0" text="Diagnóstico">
+               <font>
+                  <Font name="Times New Roman" size="26.0" />
+               </font>
+            </Text>
+            <TextArea id="txtAreaReceta" fx:id="txtAreaReceta" prefHeight="37.0" prefWidth="446.0" style="-fx-background-color: #FFFFFF;">
+               <HBox.margin>
+                  <Insets left="10.0" right="15.0" />
+               </HBox.margin>
+            </TextArea>
+         </children>
+         <padding>
+            <Insets top="5.0" />
+         </padding>
+      </HBox>
+      <HBox prefHeight="71.0" prefWidth="598.0">
+         <children>
+            <Text fill="#05212c" strokeType="OUTSIDE" strokeWidth="0.0" text="Receta:">
+               <font>
+                  <Font name="Times New Roman" size="26.0" />
+               </font>
+            </Text>
+            <TextArea id="txtAreaReceta" fx:id="txtAreaReceta1" prefHeight="100.0" prefWidth="484.0" style="-fx-background-color: #FFFFFF;">
+               <HBox.margin>
+                  <Insets left="50.0" right="15.0" top="10.0" />
+               </HBox.margin>
+            </TextArea>
+         </children>
+      </HBox>
+   </children>
+</FlowPane>
