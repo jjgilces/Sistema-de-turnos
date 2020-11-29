@@ -22,4 +22,5 @@ public class Data {
      public static CircularSimplyLinkedList<String> videos = new CircularSimplyLinkedList<>();
      public static LinkedList<Paciente> pacientes = new LinkedList<>();
      public static LinkedList<Medico> medicos = new LinkedList<>();
+     public static List<String> especialidades = new ArrayList<>();
 }

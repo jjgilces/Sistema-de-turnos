@@ -6,9 +6,13 @@
  */
 package controlador;
 
+import Serializado.BaseDatos;
+import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.LinkedList;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -22,6 +26,7 @@ import javafx.scene.control.Label;
 import modelo.Medico;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import static sistemadeturnos.Data.especialidades;
 /**
  * FXML Controller class
  *
@@ -68,18 +73,24 @@ public class FormularioDrController implements Initializable {
         boolean condition2= textFieldNull(txtApellido, labelLast, "The field is empty");
         boolean condition3 = combobox(especialidad, labelEspe, "Se requiere seleccion");
         if (condition1 || condition2 || condition3) {
-            Alert alert = new Alert(AlertType.ERROR);
-            alert.setTitle("Error Dialog");
-            alert.setHeaderText("Look, an Error Dialog");
-            alert.setContentText("Ooops, there was an error!");
-            alert.showAndWait();
+            alert();
+            txtNombre.setText(txtNombre.getText());
+            txtApellido.setText(txtApellido.getText());
         }
         else {
             Medico med = new Medico (txtNombre.getText(),txtApellido.getText(),especialidad.getValue());
+            sistemadeturnos.Data.medicos.add(med);
+            BaseDatos.listaMedicos.add(med);
+            try {
+                BaseDatos.guardarDoctores();
+                txtNombre.setText("");
+                txtApellido.setText("");
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(FormularioDrController.class.getName()).log(Level.SEVERE, null, ex);
+            }
             System.out.println(med);
         }
-        txtNombre.setText("");
-        txtApellido.setText("");
+        
         loadData();
     }
     
@@ -91,8 +102,7 @@ public class FormularioDrController implements Initializable {
             isNull=true;
             val=validate;
         }
-        else if (!text.getText().matches("[a-zA-Z]+") ){
-            System.out.println("else if");
+        else if (!text.getText().trim().matches("[a-zA-Z]\\s") ){
             isNull = true;
             val = "Se requiere letras";
         }
@@ -111,13 +121,17 @@ public class FormularioDrController implements Initializable {
         l.setText(val);
         return isNull;
     }
+    public void alert(){
+        Alert alert = new Alert(AlertType.ERROR);
+        alert.setTitle("Error Dialog");
+        alert.setHeaderText("Look, an Error Dialog");
+        alert.setContentText("Ooops, los datos ingresados no estan ingresados correctamente");
+        alert.showAndWait();
+    }
+    
     
     private void loadData(){
-        items = FXCollections.observableArrayList();
-        items.addAll("Medicina General", "Alergología", "Cardiología", "Angiología", "Cirugía General", "Dermatología", "Endocrinología", "Ecografía", "Hematología");
-        items.sort(null);
-        especialidad.getItems().setAll(items);
-    
+        especialidad.getItems().setAll(especialidades);
     }
     
     @FXML

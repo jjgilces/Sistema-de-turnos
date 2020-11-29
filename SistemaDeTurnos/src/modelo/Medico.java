@@ -1,11 +1,14 @@
 
 package modelo;
 
+import java.io.Serializable;
+import java.util.Objects;
+
 /**
  *
  * @author user
  */
-public class Medico {
+public class Medico implements Serializable{
     private String nombres;
     private String apellidos;
     private String especialidad;
@@ -45,6 +48,6 @@ public class Medico {
         return "Medico{" + "nombres=" + nombres + ", apellidos=" + apellidos + ", especialidad=" + especialidad + '}';
     }
 
-    
+
     
 }
