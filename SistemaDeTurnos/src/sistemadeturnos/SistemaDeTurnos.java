@@ -6,6 +6,7 @@ import static Serializado.Data.citas;
 import static Serializado.Data.sintomas;
 import fileReader.LectorSintomas;
 import fileReader.LectorVideos;
+import fileReader.LectorEspecialidad;
 import java.io.FileNotFoundException;
 import java.util.LinkedList;
 import java.util.List;
@@ -23,7 +24,7 @@ import modelo.Puesto;
 import modelo.Sintoma;
 import modelo.Turno;
 
-/**
+/** 
  *
  * @author user
  */
@@ -35,9 +36,11 @@ public class SistemaDeTurnos extends Application{
     //Una lista estatica para la implementacion del metodo de abajo
     //Probablemente esto despues se mueva para una mejor implementacion del programa
     public static  List<Paciente> listaPacientes = new LinkedList<>();
+    public static  List<Paciente> listaMedicos = new LinkedList<>();
     
     public static void main(String[] args) throws FileNotFoundException {
         BaseDatos.cargarPacientes();
+        BaseDatos.cargarDoctores();
         LectorSintomas.leerArchivo();
         LectorVideos.leerArchivoVideos();
         Sintoma s = sintomas.get(2);

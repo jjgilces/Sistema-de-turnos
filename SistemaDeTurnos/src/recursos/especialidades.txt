@@ -1,0 +1,9 @@
+Medicina General
+Alergología
+Cardiología
+Angiología
+Cirugía General
+Dermatología
+Endocrinología
+Ecografía
+Hematología
