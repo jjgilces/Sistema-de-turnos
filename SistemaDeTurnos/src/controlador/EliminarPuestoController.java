@@ -3,17 +3,12 @@ package controlador;
 
 import Serializado.Data;
 import java.net.URL;
-import java.util.Optional;
-import java.util.Queue;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import modelo.Medico;
-import modelo.Puesto;
+import javafx.scene.control.ComboBox;
 
 /**
  * FXML Controller class
@@ -25,9 +20,13 @@ public class EliminarPuestoController implements Initializable,Ventana {
     /**
      * Initializes the controller class.
      */
+    @FXML
+    private ComboBox CBespecialidades;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        CBespecialidades.getItems().addAll(Data.medicos);
+        
     }    
 
     @Override

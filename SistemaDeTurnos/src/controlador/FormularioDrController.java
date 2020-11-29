@@ -11,9 +11,6 @@ import static Serializado.Data.medicos;
 import java.net.URL;
 import java.util.LinkedList;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -28,6 +25,8 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import static Serializado.Data.especialidades;
+import static Serializado.Data.puestosAsignados;
+import fileReader.LectorEspecialidad;
 
 /**
  * FXML Controller class
@@ -79,7 +78,7 @@ public class FormularioDrController implements Initializable {
             Medico med = new Medico(txtNombre.getText(), txtApellido.getText(), especialidad.getValue());
             medicos.add(med);
             Alerta.Confirmar("Se ha registrado el médico", AlertType.CONFIRMATION);
-            alert();
+            System.out.println(med);
             txtNombre.setText(txtNombre.getText());
             txtApellido.setText(txtApellido.getText());
         }
@@ -132,6 +131,7 @@ public class FormularioDrController implements Initializable {
     }
 
     private void loadData() {
+        LectorEspecialidad.leerArchivo();
         especialidad.getItems().setAll(especialidades);
     }
 

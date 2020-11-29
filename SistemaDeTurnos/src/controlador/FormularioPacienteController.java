@@ -84,7 +84,7 @@ public class FormularioPacienteController implements Initializable,Ventana {
             if(mostrar) Alerta.Confirmar("Espere su turno, en breve lo atendemos", AlertType.CONFIRMATION);
             else {
                 Data.pacientes.offer(p1);
-                Alerta.Confirmar("No tenemos medicos disponibles", AlertType.ERROR);
+                Alerta.Confirmar("No tenemos medicos disponibles", AlertType.INFORMATION);
             }
             
             txtNombre.clear();
@@ -105,7 +105,7 @@ public class FormularioPacienteController implements Initializable,Ventana {
         } catch (FileNotFoundException ex) {
             Logger.getLogger(FormularioPacienteController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        Alerta.Confirmar("Paciente creado con éxito", AlertType.CONFIRMATION);
+       // Alerta.Confirmar("Paciente creado con éxito", AlertType.CONFIRMATION);
         
     }
 

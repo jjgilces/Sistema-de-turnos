@@ -56,7 +56,7 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <ComboBox fx:id="especialidad" prefHeight="26.0" prefWidth="321.0" GridPane.columnIndex="1" />
+                  <ComboBox fx:id="CBespecialidades" prefHeight="26.0" prefWidth="321.0" GridPane.columnIndex="1" />
                </children>
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
