@@ -49,30 +49,7 @@ public class SistemaPController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         new VisorVideos(mediaView).createMediaView(videos);
-
-    }
-
-    @FXML
-    public void newWindow(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/vista/FormularioDr.fxml"));
-        Stage stage = new Stage();
-        Scene scene = new Scene(root);
-        stage.setTitle("Formulario Doctor");
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    public void cambioVentanaPaciente(ActionEvent e) {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("/vista/FormularioPaciente.fxml"));
-            Stage stage = new Stage();
-            Scene scene = new Scene(root);
-            stage.setTitle("Formulario Paciente");
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException ex) {
-            Logger.getLogger(SistemaPController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        new BotonesController(btnRPaciente, btnRDoctor, btnCrearPuesto, btnEliminarPuesto).setearbotones();
     }
 
 }

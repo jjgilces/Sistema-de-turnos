@@ -10,5 +10,8 @@ package modelo;
  * @author user
  */
 public class Turno {
+    private String nombre;
+    private Paciente paciente;
+    
     
 }

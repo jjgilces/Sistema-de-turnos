@@ -15,10 +15,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="316.0" prefWidth="534.0" style="-fx-background-color: #63CBEC;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="controlador.PuestoController">
+<AnchorPane id="AnchorPane" prefHeight="316.0" prefWidth="458.0" style="-fx-background-color: #63CBEC;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.PuestoController">
    <children>
-      <VBox layoutX="40.0" layoutY="30.0" prefHeight="274.0" prefWidth="510.0">
+      <VBox layoutY="9.0" prefHeight="295.0" prefWidth="550.0">
          <children>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
@@ -32,7 +31,7 @@
                   </ImageView>
                   <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text=" Puesto" textAlignment="CENTER" wrappingWidth="378.8703582286835">
                      <font>
-                        <Font name="Arial Rounded MT Bold" size="32.0" />
+                        <Font name="Arial Rounded MT Bold" size="64.0" />
                      </font>
                      <HBox.margin>
                         <Insets />
@@ -52,26 +51,36 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="328.0" text="Doctor" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="328.0" text="Doctor">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
                   <ComboBox fx:id="especialidad" prefHeight="26.0" prefWidth="321.0" GridPane.columnIndex="1" />
                </children>
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </GridPane>
-            <HBox prefHeight="100.0" prefWidth="431.0">
+            <HBox prefHeight="90.0" prefWidth="550.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#saveData" prefHeight="49.0" prefWidth="197.0" stylesheets="@../recursos/css/button.css" text="Registrar" textFill="WHITE">
+                  <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="197.0" stylesheets="@../recursos/css/button.css" text="Cancelar" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets left="100.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnCrearPuesto" mnemonicParsing="false" prefHeight="49.0" prefWidth="197.0" stylesheets="@../recursos/css/button.css" text="Crear" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
                      <HBox.margin>
                         <Insets left="50.0" right="20.0" />
-                     </HBox.margin>
-                  </Button>
-                  <Button fx:id="closebtn" mnemonicParsing="false" onAction="#closeWindow" styleClass="button-clear" stylesheets="@../recursos/css/button.css" text="Cancelar" textFill="WHITE">
-                     <HBox.margin>
-                        <Insets right="30.0" />
                      </HBox.margin>
                   </Button>
                </children>

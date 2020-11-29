@@ -10,5 +10,6 @@ package modelo;
  * @author user
  */
 public class Cita {
-    
+    private Turno turno;
+    private Puesto puesto;
 }
