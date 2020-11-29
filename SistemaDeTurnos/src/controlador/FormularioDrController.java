@@ -51,6 +51,8 @@ public class FormularioDrController implements Initializable {
     
     @FXML
     private Label labelName;
+    
+
 
        @FXML
     private Label labelLast;
@@ -129,13 +131,11 @@ public class FormularioDrController implements Initializable {
         alert.showAndWait();
     }
     
-    
     private void loadData(){
         especialidad.getItems().setAll(especialidades);
-    }
-    
+    }    
     @FXML
-    void closeWindow(ActionEvent event) {
+    void clickCancelar(ActionEvent event) {
      Stage stage = (Stage) closebtn.getScene().getWindow();
      stage.close();
     }

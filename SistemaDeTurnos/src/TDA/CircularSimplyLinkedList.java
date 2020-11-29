@@ -1,8 +1,8 @@
 package TDA;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 import java.util.function.Consumer;
-
 
 /**
  *
@@ -33,7 +33,10 @@ public class CircularSimplyLinkedList<E> implements List<E>, Iterable<E> {
 
             @Override
             public E next() {
-                E temp = p.data;
+                if (!hasNext()) {
+                    throw new NoSuchElementException();
+                }
+                E temp = p.data;    
                 p = p.next;
                 return temp;
             }
@@ -114,7 +117,6 @@ public class CircularSimplyLinkedList<E> implements List<E>, Iterable<E> {
         }
     }
 
-    
     public int indexOf(E e) {
         if (e == null || isEmpty()) {
             return -1;
@@ -192,7 +194,6 @@ public class CircularSimplyLinkedList<E> implements List<E>, Iterable<E> {
         return n;
     }
 
-    
     public boolean insert(int index, E e) {
         if (index > current || index < 0) {
             throw new IndexOutOfBoundsException("El indice pedido supera el tamaño de la lista.");
@@ -215,7 +216,6 @@ public class CircularSimplyLinkedList<E> implements List<E>, Iterable<E> {
         return true;
     }
 
-    
     public boolean set(int index, E e) {
         if (e == null) {
             return false;

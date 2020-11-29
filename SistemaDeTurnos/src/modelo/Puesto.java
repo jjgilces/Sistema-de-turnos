@@ -5,12 +5,65 @@
  */
 package modelo;
 
+import java.io.Serializable;
+import java.util.Objects;
+
 /**
  *
  * @author user
  */
-public class Puesto {
+public class Puesto implements Serializable{
+    private int numero;
     private Medico medico;
-    private String puesto;
-    
+   
+
+    public Puesto(int numero, Medico medico) {
+        this.numero = numero;
+        this.medico = medico;
+        
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public Medico getMedico() {
+        return medico;
+    }
+
+    public void setMedico(Medico medico) {
+        this.medico = medico;
+    }
+
+    @Override
+    public String toString() {
+        return numero + " - " + medico;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 73 * hash + Objects.hashCode(this.numero);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Puesto other = (Puesto) obj;
+        return Objects.equals(this.numero, other.numero);
+    } 
 }
+

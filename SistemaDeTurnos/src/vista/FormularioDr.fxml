@@ -77,7 +77,7 @@
                <children>
                   <ButtonBar prefHeight="60.0" prefWidth="442.0">
                     <buttons>
-                      <Button fx:id="closebtn" mnemonicParsing="false" onAction="#closeWindow" styleClass="button-clear" stylesheets="@../recursos/css/button.css" text="Cancelar" textFill="WHITE" />
+                      <Button fx:id="closebtn" mnemonicParsing="false" onAction="#clickCancelar" styleClass="button-clear" stylesheets="@../recursos/css/button.css" text="Cancelar" textFill="WHITE" />
                         <Button mnemonicParsing="false" onAction="#saveData" prefHeight="49.0" prefWidth="197.0" stylesheets="@../recursos/css/button.css" text="Registrar" textFill="WHITE" />
                     </buttons>
                   </ButtonBar>

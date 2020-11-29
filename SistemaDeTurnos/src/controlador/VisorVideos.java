@@ -29,16 +29,6 @@ public class VisorVideos {
     }
 
     
-//    public void initMediaPlayer(){
-//        String file = this.getClass().getResource("/recursos/videos/video1.mp4").toExternalForm();
-//        Media media = new Media(file);
-//        mediaPlayer = new MediaPlayer(media);
-//        mediaPlayer.setAutoPlay(true);
-//        mediaView.setMediaPlayer(mediaPlayer);
-//       
-//    }
-
-    
     private void initMediaPlayer(Iterator<String> iterador){
         if (iterador.hasNext()){
         mediaPlayer = new MediaPlayer(new Media(new File(("src/recursos/videos/"+iterador.next())).toURI().toString()));

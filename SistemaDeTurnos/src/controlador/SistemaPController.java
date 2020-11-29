@@ -1,7 +1,6 @@
 package controlador;
 
-import java.io.File;
-import java.io.IOException;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -21,7 +20,9 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import static sistemadeturnos.Data.videos;
+import static Serializado.Data.videos;
+import javafx.application.Platform;
+import javafx.scene.control.Alert;
 
 /**
  * FXML Controller class
@@ -49,30 +50,14 @@ public class SistemaPController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         new VisorVideos(mediaView).createMediaView(videos);
-
+        new BotonesController(btnRPaciente, btnRDoctor, btnCrearPuesto, btnEliminarPuesto).setearbotones();
     }
-
-    @FXML
-    void newWindow(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/vista/FormularioDr.fxml"));
-        Stage stage = new Stage();
-        Scene scene = new Scene(root);
-        stage.setTitle("Formulario Doctor");
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    public void cambioVentanaPaciente(ActionEvent e) {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("/vista/FormularioPaciente.fxml"));
-            Stage stage = new Stage();
-            Scene scene = new Scene(root);
-            stage.setTitle("Formulario Paciente");
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException ex) {
-            Logger.getLogger(SistemaPController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    public static void mostrarAlerta(String mensaje, Alert.AlertType e){
+            Alert alert = new Alert(e);
+            alert.setTitle("");
+            alert.setHeaderText(null);
+            alert.setContentText(mensaje);
+            alert.showAndWait();
     }
 
 }
