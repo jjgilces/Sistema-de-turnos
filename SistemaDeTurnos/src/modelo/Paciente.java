@@ -14,6 +14,7 @@ public class Paciente implements Serializable {
     private String genero;
     private int prioridad;
     private Sintoma sintoma;
+    private static final long serialVersionUID = 12312312;
 
     public Paciente(String nombres, String apellidos, int edad, String genero, int prioridad)  {
         this.nombres = nombres;
