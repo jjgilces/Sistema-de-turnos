@@ -74,13 +74,16 @@ public class FormularioDrController implements Initializable {
         boolean condition3 = combobox(especialidad, labelEspe, "Se requiere seleccion");
         if (condition1 || condition2 || condition3) {
             Alerta.mostrarAlerta("Los campos estan vacios", AlertType.INFORMATION);
+            txtNombre.setText(txtNombre.getText());
+            txtApellido.setText(txtApellido.getText());
+            
         } else {
             Medico med = new Medico(txtNombre.getText(), txtApellido.getText(), especialidad.getValue());
             medicos.add(med);
             Alerta.Confirmar("Se ha registrado el médico", AlertType.CONFIRMATION);
-            System.out.println(med);
-            txtNombre.setText(txtNombre.getText());
-            txtApellido.setText(txtApellido.getText());
+            txtNombre.setText("");
+            txtApellido.setText("");
+            especialidad.getSelectionModel().clearSelection();
         }
 
         loadData();
@@ -92,22 +95,13 @@ public class FormularioDrController implements Initializable {
         if (text.getText().isEmpty()) {
             isNull = true;
             val = validate;
-        } else if (!text.getText().matches("[a-zA-Z]+")) {
-            System.out.println("else if");
-            if (text.getText().isEmpty()) {
-                isNull = true;
-                val = validate;
-            } else if (!text.getText().trim().matches("[a-zA-Z]\\s")) {
-                isNull = true;
-                val = "Se requiere letras";
-            }
-            label.setText(val);
-            return isNull;
+        } else if (!text.getText().matches("[a-zA-Z]+")  && !(text.getText().contains(" "))) {
+            isNull = true;
+            val = "Se requiere letras";
         }
-        return false;
+        label.setText(val);
+        return isNull;
     }
-
-    
 
     public boolean combobox(ComboBox cb, Label l, String validate) {
         boolean isNull = false;
@@ -118,16 +112,6 @@ public class FormularioDrController implements Initializable {
         }
         l.setText(val);
         return isNull;
-    }
-
-   
-
-    public void alert() {
-        Alert alert = new Alert(AlertType.ERROR);
-        alert.setTitle("Error Dialog");
-        alert.setHeaderText("Look, an Error Dialog");
-        alert.setContentText("Ooops, los datos ingresados no estan ingresados correctamente");
-        alert.showAndWait();
     }
 
     private void loadData() {
