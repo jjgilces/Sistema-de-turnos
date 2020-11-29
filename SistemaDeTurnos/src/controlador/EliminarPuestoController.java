@@ -25,7 +25,7 @@ public class EliminarPuestoController implements Initializable,Ventana {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        CBespecialidades.getItems().addAll(Data.medicos);
+        CBespecialidades.getItems().addAll(Data.puestosAsignados);
         
     }    
 
