@@ -12,6 +12,27 @@ package modelo;
 public class Turno {
     private String nombre;
     private Paciente paciente;
+
+    public Turno(String nombre, Paciente paciente) {
+        this.nombre = nombre;
+        this.paciente = paciente;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Paciente getPaciente() {
+        return paciente;
+    }
+
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
+    }
     
     
 }
