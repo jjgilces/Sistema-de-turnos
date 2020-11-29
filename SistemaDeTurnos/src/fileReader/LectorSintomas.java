@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelo.Sintoma;
-import static sistemadeturnos.Data.sintomas;
+import static Serializado.Data.sintomas;
 
 
 /**

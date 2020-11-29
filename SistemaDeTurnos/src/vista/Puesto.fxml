@@ -64,7 +64,7 @@
             </GridPane>
             <HBox prefHeight="90.0" prefWidth="550.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="197.0" stylesheets="@../recursos/css/button.css" text="Cancelar" textFill="WHITE">
+                  <Button mnemonicParsing="false" onAction="#clickCancelar" prefHeight="49.0" prefWidth="197.0" stylesheets="@../recursos/css/button.css" text="Cancelar" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -75,7 +75,7 @@
                         <Insets left="100.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="btnCrearPuesto" mnemonicParsing="false" prefHeight="49.0" prefWidth="197.0" stylesheets="@../recursos/css/button.css" text="Crear" textFill="WHITE">
+                  <Button fx:id="btnCrearPuesto" mnemonicParsing="false" onAction="#CreacionPuesto" prefHeight="49.0" prefWidth="197.0" stylesheets="@../recursos/css/button.css" text="Crear" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>

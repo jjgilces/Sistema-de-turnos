@@ -24,7 +24,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import modelo.Paciente;
 import modelo.Sintoma;
-import static sistemadeturnos.Data.sintomas;
+import static Serializado.Data.sintomas;
 import sistemadeturnos.SistemaDeTurnos;
 
 /**
@@ -32,7 +32,7 @@ import sistemadeturnos.SistemaDeTurnos;
  *
  * @author User
  */
-public class FormularioPacienteController implements Initializable {
+public class FormularioPacienteController implements Initializable,Ventana {
 
     @FXML
     private TextField txtNombre;
@@ -115,8 +115,9 @@ public class FormularioPacienteController implements Initializable {
         return name.matches("[a-zA-Z]+");
     }
 
-    public void clickSalir(ActionEvent e) {
-        Stage stage = (Stage) btnCancelar.getScene().getWindow();
+    @Override
+    public  void clickCancelar(ActionEvent e){
+        Stage stage = (Stage) btnRegistrar.getScene().getWindow();
         stage.close();
     }
 

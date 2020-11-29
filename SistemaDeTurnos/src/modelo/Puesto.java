@@ -13,21 +13,21 @@ import java.util.Objects;
  * @author user
  */
 public class Puesto implements Serializable{
-    private String numero;
+    private int numero;
     private Medico medico;
    
 
-    public Puesto(String numero, Medico medico) {
+    public Puesto(int numero, Medico medico) {
         this.numero = numero;
         this.medico = medico;
         
     }
 
-    public String getNumero() {
+    public int getNumero() {
         return numero;
     }
 
-    public void setNumero(String numero) {
+    public void setNumero(int numero) {
         this.numero = numero;
     }
 

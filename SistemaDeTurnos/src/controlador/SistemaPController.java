@@ -1,7 +1,6 @@
 package controlador;
 
-import java.io.File;
-import java.io.IOException;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -21,7 +20,9 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import static sistemadeturnos.Data.videos;
+import static Serializado.Data.videos;
+import javafx.application.Platform;
+import javafx.scene.control.Alert;
 
 /**
  * FXML Controller class
@@ -50,6 +51,13 @@ public class SistemaPController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         new VisorVideos(mediaView).createMediaView(videos);
         new BotonesController(btnRPaciente, btnRDoctor, btnCrearPuesto, btnEliminarPuesto).setearbotones();
+    }
+    public static void mostrarAlerta(String mensaje, Alert.AlertType e){
+            Alert alert = new Alert(e);
+            alert.setTitle("");
+            alert.setHeaderText(null);
+            alert.setContentText(mensaje);
+            alert.showAndWait();
     }
 
 }

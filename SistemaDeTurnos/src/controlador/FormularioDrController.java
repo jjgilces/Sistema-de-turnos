@@ -46,6 +46,8 @@ public class FormularioDrController implements Initializable {
     
     @FXML
     private Label labelName;
+    
+
 
        @FXML
     private Label labelLast;
@@ -116,12 +118,11 @@ public class FormularioDrController implements Initializable {
         items = FXCollections.observableArrayList();
         items.addAll("Medicina General", "Alergología", "Cardiología", "Angiología", "Cirugía General", "Dermatología", "Endocrinología", "Ecografía", "Hematología");
         items.sort(null);
-        especialidad.getItems().setAll(items);
-    
+        especialidad.getItems().setAll(items);  
     }
     
     @FXML
-    void closeWindow(ActionEvent event) {
+    void clickCancelar(ActionEvent event) {
      Stage stage = (Stage) closebtn.getScene().getWindow();
      stage.close();
     }
