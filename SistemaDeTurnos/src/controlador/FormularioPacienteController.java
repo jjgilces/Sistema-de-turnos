@@ -5,7 +5,10 @@
  */
 package controlador;
 
+import Serializado.Alerta;
+import static Serializado.Alerta.mostrarAlerta;
 import Serializado.BaseDatos;
+import static Serializado.Data.puestosAsignados;
 import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -25,6 +28,7 @@ import javafx.stage.Stage;
 import modelo.Paciente;
 import modelo.Sintoma;
 import static Serializado.Data.sintomas;
+import modelo.CrearCita;
 import sistemadeturnos.SistemaDeTurnos;
 
 /**
@@ -56,7 +60,6 @@ public class FormularioPacienteController implements Initializable,Ventana {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
         cboSintoma.getItems().addAll(sintomas);
     }
 
@@ -69,27 +72,23 @@ public class FormularioPacienteController implements Initializable,Ventana {
             }
             if (!(isAlpha(txtNombre.getText()) && isAlpha(txtApellidos.getText()))) {
                 throw new IllegalArgumentException();
-
             }
-            Paciente p1 = new Paciente(txtNombre.getText(), txtApellidos.getText(), Integer.parseInt(txtEdad.getText()), genero, sintoma.getPrioridad());
-            //System.out.println(p1);
-            //Anadiendo a la lista estatica del Main
+            Paciente p1 = new Paciente(txtNombre.getText(), txtApellidos.getText(), Integer.parseInt(txtEdad.getText()), genero,sintoma);
             SistemaDeTurnos.listaPacientes.add(p1);
-            //Anadiendo y guardando en la base de datos
             BaseDatos.listaPacientes.add(p1);
             BaseDatos.guardarPacientes();
+            boolean mostrar = CrearCita.asignarPuestoATurno(p1, puestosAsignados);
+            if(mostrar) System.out.println("espere su turno");
+            else  System.out.println("no tenemos medicos disponibles");
+            
             txtNombre.clear();
             txtApellidos.clear();
-            txtEdad.clear();
-            
-
+            txtEdad.clear();         
         } catch (NumberFormatException ex) {
             txtEdad.clear();
             mostrarAlerta("Ingrese solo numeros porfavor", AlertType.ERROR);
         } catch (IllegalArgumentException ex) {
-
             if (!(isAlpha(txtNombre.getText()) && isAlpha(txtApellidos.getText()))) {
-
                 mostrarAlerta("En los campos Nombre y Apellido utilice unicamente letras porfavor.", AlertType.ERROR);
             }
             if (Integer.parseInt(txtEdad.getText()) < 0) {
@@ -100,15 +99,8 @@ public class FormularioPacienteController implements Initializable,Ventana {
         } catch (FileNotFoundException ex) {
             Logger.getLogger(FormularioPacienteController.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
-
-    public static void mostrarAlerta(String mensaje, AlertType e) {
-        Alert alert = new Alert(e);
-
-        alert.setTitle("Error!");
-        alert.setHeaderText("Hubo un error en el ingreso de datos!");
-        alert.setContentText(mensaje);
-        alert.showAndWait();
+        Alerta.Confirmar("Paciente creado con éxito", AlertType.CONFIRMATION);
+        
     }
 
     public boolean isAlpha(String name) {

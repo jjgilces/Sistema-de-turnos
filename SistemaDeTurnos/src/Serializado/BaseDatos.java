@@ -42,15 +42,26 @@ public class BaseDatos {
     
     public static void cargarPacientes() throws FileNotFoundException {
         try {
-            FileInputStream fis = new FileInputStream("src/recursos/DatosPacientes");
+            FileInputStream fis = new FileInputStream("src/recursos/DatosPacientes2");
             ObjectInputStream ois = new ObjectInputStream(fis);
             listaPacientes = (ArrayList) ois.readObject();
             System.out.println("CARGADO DE PACIENTES EXITOSO");
            // System.out.println(listaPacientes);
         } catch (IOException ex) {
-            Logger.getLogger(BaseDatos.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(BaseDatos.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+//     public void llenarListas() {
+//        reader = new MedicoFileReader();
+//        System.out.println("Medicos ser");
+//        LMedico = reader.LeerArchivo("medicos.ser");
+//        System.out.println("Puestos Ser");
+//        reader = new PuestoFileReader();
+//        LPuesto = reader.LeerArchivo("puestos.ser");
+//        System.out.println("Sintomas.txt");
+//        reader = new SintomasFileReader();
+//        LSintomas = reader.LeerArchivo("sintomas.txt");
+//    }
 }

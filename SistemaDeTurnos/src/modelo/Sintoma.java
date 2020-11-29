@@ -6,6 +6,7 @@
 package modelo;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ import java.util.logging.Logger;
  *
  * @author User
  */
-public class Sintoma {
+public class Sintoma implements Serializable{
     private String nombre;
     private int prioridad;
 

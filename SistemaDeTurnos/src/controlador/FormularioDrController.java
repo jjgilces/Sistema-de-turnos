@@ -6,6 +6,8 @@
  */
 package controlador;
 
+import Serializado.Alerta;
+import static Serializado.Data.medicos;
 import java.net.URL;
 import java.util.LinkedList;
 import java.util.ResourceBundle;
@@ -22,6 +24,7 @@ import javafx.scene.control.Label;
 import modelo.Medico;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
 /**
  * FXML Controller class
  *
@@ -31,69 +34,60 @@ public class FormularioDrController implements Initializable {
 
     @FXML
     public TextField txtNombre;
-    
+
     @FXML
     private ComboBox<String> especialidad;
-    
-     @FXML
+
+    @FXML
     private Label labelEspe;
-    
+
     @FXML
     public TextField txtApellido;
-    
+
     @FXML
     private Button closebtn;
-    
+
     @FXML
     private Label labelName;
-    
 
-
-       @FXML
+    @FXML
     private Label labelLast;
-    
+
     private ObservableList<String> items;
-    
-    public LinkedList<Medico> med = new LinkedList<>(); 
+
+    public LinkedList<Medico> med = new LinkedList<>();
+
     @Override
-   
-    
+
     public void initialize(URL url, ResourceBundle rb) {
         loadData();
-    }    
-    
-       
+    }
+
     @FXML
 
     void saveData(ActionEvent event) {
-        boolean condition1 = textFieldNull(txtNombre, labelName, "The field is empty");
-        boolean condition2= textFieldNull(txtApellido, labelLast, "The field is empty");
+        boolean condition1 = textFieldNull(txtNombre, labelName, "El campo esta vacio");
+        boolean condition2 = textFieldNull(txtApellido, labelLast, "El campo esta vacio");
         boolean condition3 = combobox(especialidad, labelEspe, "Se requiere seleccion");
         if (condition1 || condition2 || condition3) {
-            Alert alert = new Alert(AlertType.ERROR);
-            alert.setTitle("Error Dialog");
-            alert.setHeaderText("Look, an Error Dialog");
-            alert.setContentText("Ooops, there was an error!");
-            alert.showAndWait();
-        }
-        else {
-            Medico med = new Medico (txtNombre.getText(),txtApellido.getText(),especialidad.getValue());
-            System.out.println(med);
+            Alerta.mostrarAlerta("Los campos estan vacios", AlertType.INFORMATION);
+        } else {
+            Medico med = new Medico(txtNombre.getText(), txtApellido.getText(), especialidad.getValue());
+            medicos.add(med);
+            Alerta.Confirmar("Se ha registrado el médico", AlertType.CONFIRMATION);      
         }
         txtNombre.setText("");
         txtApellido.setText("");
         loadData();
     }
-    
-    
-    public static boolean textFieldNull(TextField text, Label label, String validate ){
+
+    public static boolean textFieldNull(TextField text, Label label, String validate) {
         boolean isNull = false;
         String val = null;
-        if (text.getText().isEmpty()){
-            isNull=true;
-            val=validate;
-        }
-        else if (!text.getText().matches("[a-zA-Z]+") ){
+        if (text.getText().isEmpty()) {
+            isNull = true;
+            val = validate;
+        } else if (!text.getText().matches("[a-zA-Z]+")) {
             System.out.println("else if");
             isNull = true;
             val = "Se requiere letras";
@@ -101,11 +95,10 @@ public class FormularioDrController implements Initializable {
         label.setText(val);
         return isNull;
     }
-    
-    
-    public boolean combobox(ComboBox cb,Label l,String validate){
+
+    public boolean combobox(ComboBox cb, Label l, String validate) {
         boolean isNull = false;
-        String val=null ;
+        String val = null;
         if (cb.getValue() == null || cb.getValue().toString().isEmpty()) {
             isNull = true;
             val = validate;
@@ -113,17 +106,17 @@ public class FormularioDrController implements Initializable {
         l.setText(val);
         return isNull;
     }
-    
-    private void loadData(){
+
+    private void loadData() {
         items = FXCollections.observableArrayList();
         items.addAll("Medicina General", "Alergología", "Cardiología", "Angiología", "Cirugía General", "Dermatología", "Endocrinología", "Ecografía", "Hematología");
         items.sort(null);
-        especialidad.getItems().setAll(items);  
+        especialidad.getItems().setAll(items);
     }
-    
+
     @FXML
     void clickCancelar(ActionEvent event) {
-     Stage stage = (Stage) closebtn.getScene().getWindow();
-     stage.close();
+        Stage stage = (Stage) closebtn.getScene().getWindow();
+        stage.close();
     }
 }

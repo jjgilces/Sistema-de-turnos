@@ -5,11 +5,13 @@
  */
 package modelo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author user
  */
-public class Turno {
+public class Turno implements Serializable{
     private String nombre;
     private Paciente paciente;
 
@@ -32,6 +34,11 @@ public class Turno {
 
     public void setPaciente(Paciente paciente) {
         this.paciente = paciente;
+    }
+
+    @Override
+    public String toString() {
+        return nombre ;
     }
     
     

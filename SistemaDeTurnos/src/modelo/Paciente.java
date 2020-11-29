@@ -12,21 +12,20 @@ public class Paciente implements Serializable {
     private String apellidos;
     private int edad;
     private String genero;
-    private int prioridad;
     private Sintoma sintoma;
     private static final long serialVersionUID = 12312312;
 
-    public Paciente(String nombres, String apellidos, int edad, String genero, int prioridad)  {
+    public Paciente(String nombres, String apellidos, int edad, String genero,Sintoma sintoma)  {
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.edad = edad;
         this.genero = genero;
-        this.prioridad = prioridad;
+        this.sintoma=sintoma;
     }
 
     @Override
     public String toString() {
-        return  nombres + apellidos + prioridad ;
+        return  nombres + apellidos  ;
     }
 
     public String getNombres() {
@@ -61,13 +60,6 @@ public class Paciente implements Serializable {
         this.genero = genero;
     }
 
-    public int getPrioridad() {
-        return prioridad;
-    }
-
-    public void setPrioridad(int prioridad) {
-        this.prioridad = prioridad;
-    }
 
     public Sintoma getSintoma() {
         return sintoma;

@@ -1,15 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package modelo;
+
+import java.io.Serializable;
 
 /**
  *
  * @author user
  */
-public class Cita {
+public class Cita implements Serializable{
     private Turno turno;
     private Puesto puesto;
 
@@ -32,6 +30,11 @@ public class Cita {
 
     public void setPuesto(Puesto puesto) {
         this.puesto = puesto;
+    }
+
+    @Override
+    public String toString() {
+        return  turno + ", puesto=" + puesto + '}';
     }
     
     

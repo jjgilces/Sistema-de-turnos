@@ -5,7 +5,7 @@ import java.util.Random;
 
 /**
  *
- * @author user
+ * @author Johan
  */
 public class GeneradorTurno {
     public static Random  numAleatorio = new Random();

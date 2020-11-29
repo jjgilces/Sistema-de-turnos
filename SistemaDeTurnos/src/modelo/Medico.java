@@ -42,7 +42,7 @@ public class Medico {
 
     @Override
     public String toString() {
-        return "Medico{" + "nombres=" + nombres + ", apellidos=" + apellidos + ", especialidad=" + especialidad + '}';
+        return especialidad+ " " + nombres +  apellidos ;
     }
 
     
