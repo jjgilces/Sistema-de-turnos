@@ -8,6 +8,7 @@ package controlador;
 import Serializado.Alerta;
 import static Serializado.Alerta.mostrarAlerta;
 import Serializado.BaseDatos;
+import Serializado.Data;
 import static Serializado.Data.puestosAsignados;
 import java.io.FileNotFoundException;
 import java.net.URL;
@@ -77,9 +78,14 @@ public class FormularioPacienteController implements Initializable,Ventana {
             SistemaDeTurnos.listaPacientes.add(p1);
             BaseDatos.listaPacientes.add(p1);
             BaseDatos.guardarPacientes();
+            //Hacer Excepcion de los turnos!
             boolean mostrar = CrearCita.asignarPuestoATurno(p1, puestosAsignados);
-            if(mostrar) System.out.println("espere su turno");
-            else  System.out.println("no tenemos medicos disponibles");
+            
+            if(mostrar) Alerta.Confirmar("Espere su turno, en breve lo atendemos", AlertType.CONFIRMATION);
+            else {
+                Data.pacientes.offer(p1);
+                Alerta.Confirmar("No tenemos medicos disponibles", AlertType.ERROR);
+            }
             
             txtNombre.clear();
             txtApellidos.clear();

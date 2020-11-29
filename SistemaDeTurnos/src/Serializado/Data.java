@@ -24,6 +24,7 @@ import modelo.Sintoma;
 public class Data {
     /*Se encarga de intanciar los datos guardados acualmente*/
      public static List<Sintoma> sintomas = new ArrayList<>();
+     public static List<String> especialidades = new LinkedList<>(); 
      public static CircularSimplyLinkedList<String> videos = new CircularSimplyLinkedList<>();
      public static PriorityQueue<Paciente> pacientes = new PriorityQueue<>((Paciente p1, Paciente p2)-> p1.getSintoma().getPrioridad()-p2.getSintoma().getPrioridad());
      public static LinkedList<Medico> medicos = new LinkedList<>();

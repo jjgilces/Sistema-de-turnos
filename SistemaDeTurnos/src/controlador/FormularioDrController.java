@@ -27,7 +27,8 @@ import modelo.Medico;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import static sistemadeturnos.Data.especialidades;
+import static Serializado.Data.especialidades;
+
 /**
  * FXML Controller class
  *
@@ -77,25 +78,12 @@ public class FormularioDrController implements Initializable {
         } else {
             Medico med = new Medico(txtNombre.getText(), txtApellido.getText(), especialidad.getValue());
             medicos.add(med);
-            Alerta.Confirmar("Se ha registrado el médico", AlertType.CONFIRMATION);      
+            Alerta.Confirmar("Se ha registrado el médico", AlertType.CONFIRMATION);
             alert();
             txtNombre.setText(txtNombre.getText());
             txtApellido.setText(txtApellido.getText());
         }
-        else {
-            Medico med = new Medico (txtNombre.getText(),txtApellido.getText(),especialidad.getValue());
-            sistemadeturnos.Data.medicos.add(med);
-            BaseDatos.listaMedicos.add(med);
-            try {
-                BaseDatos.guardarDoctores();
-                txtNombre.setText("");
-                txtApellido.setText("");
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(FormularioDrController.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            System.out.println(med);
-        }
-        
+
         loadData();
     }
 
@@ -107,17 +95,20 @@ public class FormularioDrController implements Initializable {
             val = validate;
         } else if (!text.getText().matches("[a-zA-Z]+")) {
             System.out.println("else if");
-        if (text.getText().isEmpty()){
-            isNull=true;
-            val=validate;
+            if (text.getText().isEmpty()) {
+                isNull = true;
+                val = validate;
+            } else if (!text.getText().trim().matches("[a-zA-Z]\\s")) {
+                isNull = true;
+                val = "Se requiere letras";
+            }
+            label.setText(val);
+            return isNull;
         }
-        else if (!text.getText().trim().matches("[a-zA-Z]\\s") ){
-            isNull = true;
-            val = "Se requiere letras";
-        }
-        label.setText(val);
-        return isNull;
+        return false;
     }
+
+    
 
     public boolean combobox(ComboBox cb, Label l, String validate) {
         boolean isNull = false;
@@ -130,24 +121,20 @@ public class FormularioDrController implements Initializable {
         return isNull;
     }
 
-    private void loadData() {
-        items = FXCollections.observableArrayList();
-        items.addAll("Medicina General", "Alergología", "Cardiología", "Angiología", "Cirugía General", "Dermatología", "Endocrinología", "Ecografía", "Hematología");
-        items.sort(null);
-        especialidad.getItems().setAll(items);
-    }
+   
 
-    public void alert(){
+    public void alert() {
         Alert alert = new Alert(AlertType.ERROR);
         alert.setTitle("Error Dialog");
         alert.setHeaderText("Look, an Error Dialog");
         alert.setContentText("Ooops, los datos ingresados no estan ingresados correctamente");
         alert.showAndWait();
     }
-    
-    private void loadData(){
+
+    private void loadData() {
         especialidad.getItems().setAll(especialidades);
-    }    
+    }
+
     @FXML
     void clickCancelar(ActionEvent event) {
         Stage stage = (Stage) closebtn.getScene().getWindow();
