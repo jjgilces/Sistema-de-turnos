@@ -45,7 +45,7 @@ public class Sintoma implements Serializable{
 
     @Override
     public String toString() {
-        return nombre + prioridad ;
+        return nombre  ;
     }
     
 }

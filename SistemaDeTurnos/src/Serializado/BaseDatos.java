@@ -28,50 +28,5 @@ public class BaseDatos {
     public static ArrayList<Paciente> listaPacientes = new ArrayList<>();
     public static ArrayList<Medico> listaMedicos = new ArrayList<>();
 
-    public static void guardarPacientes() throws FileNotFoundException {
-        try ( FileOutputStream fos = new FileOutputStream("src/recursos/DatosPacientes");  ObjectOutputStream oos = new ObjectOutputStream(fos);) {
-            oos.writeObject(listaPacientes);
-            oos.close();
-            fos.close();
 
-        } catch (IOException ex) {
-            Logger.getLogger(BaseDatos.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
-    public static void cargarPacientes() throws FileNotFoundException {
-        try ( FileInputStream fis = new FileInputStream("src/recursos/DatosPacientes");  ObjectInputStream ois = new ObjectInputStream(fis);) {
-
-            listaPacientes = (ArrayList) ois.readObject();
-        } catch (IOException ex) {
-            Logger.getLogger(BaseDatos.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(BaseDatos.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    
-    public static void guardarDoctores() throws FileNotFoundException {
-        try {
-            FileOutputStream fos = new FileOutputStream("src/recursos/DatosDoctor");
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(listaMedicos);
-            oos.close();
-            fos.close();
-
-        } catch (IOException ex) {
-            Logger.getLogger(BaseDatos.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    
-    public static void cargarDoctores() throws FileNotFoundException {
-        try {
-            FileInputStream fis = new FileInputStream("src/recursos/DatosPacientes2");
-            ObjectInputStream ois = new ObjectInputStream(fis);
-            listaPacientes = (ArrayList) ois.readObject();
-        } catch (IOException ex) {
-            System.out.println(ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(BaseDatos.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
 }

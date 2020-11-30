@@ -40,8 +40,6 @@ public class SistemaDeTurnos extends Application{
     public static  List<Paciente> listaMedicos = new LinkedList<>();
     
     public static void main(String[] args) throws FileNotFoundException {
-        BaseDatos.cargarPacientes();
-        BaseDatos.cargarDoctores();
         CargarDatos.cargarArchivos();
         launch(args);
     }

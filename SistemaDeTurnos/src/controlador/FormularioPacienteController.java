@@ -78,7 +78,7 @@ public class FormularioPacienteController implements Initializable,Ventana {
             Paciente p1 = new Paciente(txtNombre.getText(), txtApellidos.getText(), Integer.parseInt(txtEdad.getText()), genero,sintoma);
             SistemaDeTurnos.listaPacientes.add(p1);
             BaseDatos.listaPacientes.add(p1);
-            BaseDatos.guardarPacientes();
+//            BaseDatos.guardarPacientes();
             //Hacer Excepcion de los turnos!
             boolean mostrar = CrearCita.asignarPuestoATurno(p1, puestosAsignados);      
             if(mostrar) {
@@ -105,8 +105,6 @@ public class FormularioPacienteController implements Initializable,Ventana {
                 mostrarAlerta("Ingrese solo numeros positivos porfavor.","Datos incorrectos", AlertType.ERROR);
             }
 
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(FormularioPacienteController.class.getName()).log(Level.SEVERE, null, ex);
         }
        // Alerta.Confirmar("Paciente creado con éxito", AlertType.CONFIRMATION);
         

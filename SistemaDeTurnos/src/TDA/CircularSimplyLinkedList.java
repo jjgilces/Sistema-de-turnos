@@ -6,9 +6,9 @@ import java.util.function.Consumer;
 
 /**
  *
- * @Johan Gilces
+ * Johan Gilces
  */
-public class CircularSimplyLinkedList<E> implements List<E>, Iterable<E> {
+public class CircularSimplyLinkedList<E> implements  Iterable<E> {
 
     private Node<E> last;
     private int current;
@@ -18,7 +18,6 @@ public class CircularSimplyLinkedList<E> implements List<E>, Iterable<E> {
         current = 0;
     }
 
-    @Override
     public Iterator<E> iterator() {
         if (isEmpty()) {
             throw new IllegalStateException("Lista vacia");
@@ -26,17 +25,15 @@ public class CircularSimplyLinkedList<E> implements List<E>, Iterable<E> {
         Iterator<E> it = new Iterator<E>() {
             Node<E> p = last.next;
 
-            @Override
             public boolean hasNext() {
                 return p != null;
             }
 
-            @Override
             public E next() {
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                E temp = p.data;    
+                E temp = p.data;
                 p = p.next;
                 return temp;
             }
@@ -45,15 +42,6 @@ public class CircularSimplyLinkedList<E> implements List<E>, Iterable<E> {
         return it;
     }
 
-    @Override
-    public boolean add(E element, int index) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void forEach(Consumer<? super E> action) {
-        Iterable.super.forEach(action); //To change body of generated methods, choose Tools | Templates.
-    }
 
     private class Node<E> {
 
@@ -66,7 +54,6 @@ public class CircularSimplyLinkedList<E> implements List<E>, Iterable<E> {
         }
     }
 
-    @Override
     public boolean addFirst(E e) {
         if (e == null) {
             return false;
@@ -84,7 +71,6 @@ public class CircularSimplyLinkedList<E> implements List<E>, Iterable<E> {
         return true;
     }
 
-    @Override
     public boolean addLast(E e) {
         Node<E> n = new Node<>(e);
         if (isEmpty()) {
@@ -99,7 +85,6 @@ public class CircularSimplyLinkedList<E> implements List<E>, Iterable<E> {
         return true;
     }
 
-    @Override
     public E getFirst() {
         if (isEmpty()) {
             throw new IllegalStateException("La lista está vacía.");
@@ -108,7 +93,6 @@ public class CircularSimplyLinkedList<E> implements List<E>, Iterable<E> {
         }
     }
 
-    @Override
     public E getLast() {
         if (isEmpty()) {
             throw new IllegalStateException("La lista está vacía.");
@@ -131,45 +115,10 @@ public class CircularSimplyLinkedList<E> implements List<E>, Iterable<E> {
         return -1;
     }
 
-    @Override
     public int size() {
         return current;
     }
 
-    @Override
-    public boolean removeLast() {
-        if (isEmpty()) {
-            return false;
-        }
-        if (last.next == last) {
-            last.data = null; // help GC
-            last.next = last = null;
-        } else {
-            last.data = null; // help GC
-            Node<E> prev = getPrevious(last);
-            prev.next = last.next;
-            last = prev;
-        }
-        current--;
-        return true;
-    }
-
-    private Node<E> getPrevious(Node<E> n) {
-        if (n == last.next) {
-            return last;
-        }
-        Node<E> q = last.next;
-        Node<E> prev = null;
-        do {
-            if (q.next == n) {
-                prev = q;
-            }
-            q = q.next;
-        } while (q != last);
-        return prev;
-    }
-
-    @Override
     public boolean removeFirst() {
         if (isEmpty()) {
             return false;
@@ -232,12 +181,10 @@ public class CircularSimplyLinkedList<E> implements List<E>, Iterable<E> {
         return true;
     }
 
-    @Override
     public boolean isEmpty() {
         return last == null;
     }
 
-    @Override
     public E get(int index) {
         if (index < 0 || index >= current) {
             throw new IndexOutOfBoundsException("El indice esta fuera del limite");
@@ -250,7 +197,6 @@ public class CircularSimplyLinkedList<E> implements List<E>, Iterable<E> {
         }
     }
 
-    @Override
     public boolean contains(E e) {
         Node<E> p = last.next;
         do {
@@ -262,29 +208,7 @@ public class CircularSimplyLinkedList<E> implements List<E>, Iterable<E> {
         return false;
     }
 
-    @Override
-    public boolean remove(int index) {
-        if (index < 0 || index >= current) {
-            return false;
-        }
-        if (index == 0) {
-            return removeFirst();
-        }
-        if (index == current - 1) {
-            return removeLast();
-        }
-
-        Node<E> q = getNode(index - 1);
-        Node<E> p = q.next;
-        p.data = null;//HELP GC
-        p.next = null; //HELP GC
-
-        q.next = p.next;
-        current--;
-        return true;
-    }
-
-    @Override
+ 
     public String toString() {
         if (isEmpty()) {
             return "[]";
@@ -292,7 +216,7 @@ public class CircularSimplyLinkedList<E> implements List<E>, Iterable<E> {
         StringBuilder sb = new StringBuilder();
         sb.append("[");
         Node<E> p = last.next;
-        for (int i = 0; i < current - 1; i++)//hasta el penultimo
+        for (int i = 0; i < current - 1; i++)// hasta el penultimo
         {
             sb.append(p.data);
             sb.append(",");
