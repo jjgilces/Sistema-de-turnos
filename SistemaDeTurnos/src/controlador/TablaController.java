@@ -64,22 +64,6 @@ public class TablaController {
         tableList = FXCollections.observableArrayList();
         tbTurnoCita.setItems(tableList);
         tbTurnoCita.setPlaceholder(new Text("No hay citas")); 
-        System.out.println(sintomas);
-        Sintoma s = sintomas.get(0);
-        System.out.println(s);
-        Paciente p = new Paciente("Juan", "Gilces", 10, "masculino", s);
-        Medico medico = new Medico("Jose", "PEPE", "Cardiolgo");
-        Puesto puesto = new Puesto(2, medico);
-        Puesto puesto2 = new Puesto(1, medico);
-        Turno turno = new Turno("A209", p);
-        Turno turno2 =GeneradorTurno.generarTurnoConPaciente(p);
-        Cita c = new Cita(turno, puesto);
-        Cita c2 =new Cita(turno2, puesto);
-        Cita c3 =new Cita(turno2, puesto2);
-        tableList.add(c);
-        tableList.add(c2);
-        tableList.add(c3);
-//        tbTurnoCita.getItems().add(c);
     }
  
      @FXML
@@ -108,10 +92,8 @@ public class TablaController {
         }
         
     }
-
-    
-    public static void updateTable(Cita c) {
-        tableList.add(c);
+    public static void updateTable() {
+        tableList.clear();
+        tableList.addAll(citas);
     }
-    
 }
