@@ -46,6 +46,7 @@ public class EliminarPuestoController implements Initializable,Ventana {
     }
     @FXML
     void deletePuesto(ActionEvent event) {
+        
         if (validate(CBpuestoasig)) {
             Alerta.mostrarAlerta("No hay ninguna seleccion","Verifique su seleccion", Alert.AlertType.ERROR);
         }
@@ -58,8 +59,9 @@ public class EliminarPuestoController implements Initializable,Ventana {
                     Alerta.confirmPuestoDelete();    
             }
             else 
-                Alerta.mostrarAlerta("Este doctor se encuentra asignado a una cita", "Cannot Delete", Alert.AlertType.ERROR);
+                Alerta.mostrarAlerta("Este doctor se encuentra asignado a una cita", "Espere un momento", Alert.AlertType.ERROR);
         }
+           System.out.println(Data.citas);
     }
     
     public boolean validate(ComboBox c) {
