@@ -72,8 +72,6 @@ public class FormularioPacienteController implements Initializable,Ventana {
                 throw new IllegalArgumentException();
             }
             Paciente p1 = new Paciente(txtNombre.getText(), txtApellidos.getText(), Integer.parseInt(txtEdad.getText()), genero,sintoma);
-            SistemaDeTurnos.listaPacientes.add(p1);
-          //  BaseDatos.listaPacientes.add(p1);
 //            BaseDatos.guardarPacientes();
             //Hacer Excepcion de los turnos!
             boolean mostrar = CrearCita.asignarPuestoATurno(p1, puestosAsignados);      
@@ -107,7 +105,7 @@ public class FormularioPacienteController implements Initializable,Ventana {
     }
 
     public boolean isAlpha(String name) {
-        return name.matches("[a-zA-Z]+");
+        return name.matches("[a-zA-Z ]+");
     }
 
     @Override

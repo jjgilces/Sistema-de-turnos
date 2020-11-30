@@ -44,6 +44,11 @@ public class SistemaPController implements Initializable {
     public TableView<Cita> tbTurnoCita= new TableView<Cita>();
     public static TableView<Cita> tablaView ;
     private static ObservableList<Cita> tableElement;
+    private TablaController controladorTabla = new TablaController(colTurno, colPuesto, tbTurnoCita);
+
+    public TablaController getControladorTabla() {
+        return controladorTabla;
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {

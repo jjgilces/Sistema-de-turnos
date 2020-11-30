@@ -5,15 +5,23 @@
  */
 package controlador;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import modelo.Atencion;
 import modelo.Paciente;
 
 /**
@@ -46,7 +54,13 @@ public class AtencionController implements Initializable, Ventana {
 
     //GUARDAR ATENCION
     @FXML
+    private Button btnCancelar;
+    @FXML
     private Button btnGuardar;
+    
+    
+    private Paciente paciente;
+    private SistemaPController pantallaPrincipal;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -56,6 +70,7 @@ public class AtencionController implements Initializable, Ventana {
     public void fillInData(Paciente patient) {
         this.txtEdad.setText(String.valueOf(patient.getEdad()));
         this.txtGenero.setText(patient.getGenero());
+        this.paciente = patient;
         this.txtSintoma.setText(patient.getSintoma().getNombre());
         this.txtNombrePaciente.setText(patient.getNombres());
         this.txtApellidoPaciente.setText(patient.getApellidos());
@@ -63,8 +78,31 @@ public class AtencionController implements Initializable, Ventana {
 
     @Override
     public void clickCancelar(ActionEvent e) {
-        Stage stage = (Stage) btnGuardar.getScene().getWindow();
+        Stage stage = (Stage) btnCancelar.getScene().getWindow();
         stage.close();
     }
     
+    public void clickGuardar(ActionEvent e){
+        FileWriter fr = null;
+        try {
+            Atencion a = new Atencion(paciente,txtAreaReceta.getText(),txtAreaDiagnostico.getText());
+            File f = new File("RegistroAtencion.txt");
+            fr = new FileWriter(f,true);
+            fr.write(a.toString());
+            
+        } catch (IOException ex) {
+            Logger.getLogger(AtencionController.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                fr.close();
+            } catch (IOException ex) {
+                Logger.getLogger(AtencionController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+            TablaController.removerCita();
+            Stage stage = (Stage) btnGuardar.getScene().getWindow();
+            stage.close();
+   
+        
+    }
 }
