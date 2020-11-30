@@ -109,7 +109,7 @@ public class FormularioPacienteController implements Initializable,Ventana {
     }
 
     public boolean isAlpha(String name) {
-        return name.matches("[a-zA-Z]+");
+        return name.matches("[a-zA-Z ]+");
     }
 
     @Override
