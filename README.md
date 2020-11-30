@@ -69,8 +69,8 @@ El paciente llega al consultorio y es registrado por la secretaria, y espera que
   </div>
   
   
-     <p align="center">
-  HOLA
+   <p align="center">
+  Eliminacion de Puestos
 </p>
   <div>
   <p align ="center">
