@@ -7,7 +7,7 @@
 package controlador;
 
 import Serializado.Alerta;
-import static Serializado.Data.medicos;
+import static controlador.Data.medicos;
 import java.net.URL;
 import java.util.LinkedList;
 import java.util.ResourceBundle;
@@ -23,8 +23,7 @@ import modelo.Medico;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import static Serializado.Data.especialidades;
-import fileReader.LectorEspecialidad;
+import static controlador.Data.especialidades;
 
 /**
  * FXML Controller class

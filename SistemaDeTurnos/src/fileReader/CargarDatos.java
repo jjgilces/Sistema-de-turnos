@@ -5,7 +5,7 @@
  */
 package fileReader;
 
-import Serializado.Data;
+import controlador.Data;
 import modelo.Medico;
 
 /**

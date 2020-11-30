@@ -2,13 +2,10 @@
 package controlador;
 
 import Serializado.Alerta;
-import Serializado.Data;
-import static Serializado.Data.medicos;
-import static Serializado.Data.puestosAsignados;
+import static controlador.Data.medicos;
+import static controlador.Data.puestosAsignados;
 import java.net.URL;
-import java.util.Queue;
 import java.util.ResourceBundle;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -26,7 +23,7 @@ import modelo.Puesto;
  */
 public class PuestoController implements Initializable,Ventana {
     
-    public int turno =1 ;
+    public static int turno =1 ;
     
     @FXML
     private Button btnCrearPuesto;

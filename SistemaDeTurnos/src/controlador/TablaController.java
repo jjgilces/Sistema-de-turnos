@@ -6,12 +6,8 @@
 package controlador;
 
 import Serializado.Alerta;
-import Serializado.Data;
-import static Serializado.Data.citas;
-import static Serializado.Data.sintomas;
+import static controlador.Data.citas;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -26,11 +22,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import modelo.Cita;
-import modelo.GeneradorTurno;
-import modelo.Medico;
-import modelo.Paciente;
 import modelo.Puesto;
-import modelo.Sintoma;
 import modelo.Turno;
 
 /**
@@ -39,11 +31,11 @@ import modelo.Turno;
  */
 public class TablaController {
     @FXML
-    private TableColumn<Turno,Cita> colTurno;
+    private final TableColumn<Turno,Cita> colTurno;
     @FXML
-    private TableColumn<Puesto,Cita> colPuesto;
+    private final TableColumn<Puesto,Cita> colPuesto;
     @FXML
-    private  TableView<Cita> tbTurnoCita;
+    private final  TableView<Cita> tbTurnoCita;
     
     private SistemaPController principal;
     

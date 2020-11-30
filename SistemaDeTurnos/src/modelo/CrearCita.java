@@ -1,11 +1,9 @@
 
 package modelo;
 
-import static Serializado.Data.citas;
+import static controlador.Data.citas;
 import java.util.LinkedList;
 import java.util.Queue;
-import modelo.Medico;
-import modelo.Paciente;
 
 /**
  *

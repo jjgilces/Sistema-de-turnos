@@ -7,7 +7,6 @@ package controlador;
 
 import TDA.CircularSimplyLinkedList;
 import java.io.File;
-import javafx.fxml.FXML;
 import javafx.scene.media.MediaView;
 import java.util.Iterator;
 import javafx.scene.media.Media;
@@ -18,7 +17,7 @@ import javafx.scene.media.MediaPlayer;
  * @author user
  */
 public class VisorVideos {
-    private MediaView mediaView;
+    private final MediaView mediaView;
     private Media media;
     private MediaPlayer mediaPlayer;
 

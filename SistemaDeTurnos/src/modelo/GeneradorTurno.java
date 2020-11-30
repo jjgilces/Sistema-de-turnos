@@ -12,7 +12,7 @@ public class GeneradorTurno {
     public static Turno generarTurnoConPaciente(Paciente p){
         int n = numAleatorio.nextInt(300-100+1) + 100;
         Sintoma s = p.getSintoma();
-        String letra = "";
+        String letra;
         switch(s.getPrioridad()){
             case 0:
                 letra = "A";

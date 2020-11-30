@@ -2,12 +2,10 @@
 package controlador;
 
 import Serializado.Alerta;
-import Serializado.Data;
-import static Serializado.Data.citas;
-import static Serializado.Data.puestosAsignados;
+import static controlador.Data.citas;
+import static controlador.Data.puestosAsignados;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

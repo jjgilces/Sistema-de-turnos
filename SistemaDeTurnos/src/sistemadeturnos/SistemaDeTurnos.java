@@ -2,8 +2,8 @@
 package sistemadeturnos;
 
 import Serializado.BaseDatos;
-import static Serializado.Data.citas;
-import static Serializado.Data.sintomas;
+import static controlador.Data.citas;
+import static controlador.Data.sintomas;
 import fileReader.CargarDatos;
 import fileReader.LectorSintomas;
 import fileReader.LectorVideos;
@@ -18,12 +18,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import modelo.Cita;
 import modelo.Medico;
 import modelo.Paciente;
-import modelo.Puesto;
-import modelo.Sintoma;
-import modelo.Turno;
 
 /** 
  *
@@ -32,12 +28,11 @@ import modelo.Turno;
 public class SistemaDeTurnos extends Application{
 
     /**
-     * @param args the command line arguments
      */
     //Una lista estatica para la implementacion del metodo de abajo
     //Probablemente esto despues se mueva para una mejor implementacion del programa
     public static  List<Paciente> listaPacientes = new LinkedList<>();
-    public static  List<Paciente> listaMedicos = new LinkedList<>();
+    public static  List<Medico> listaMedicos = new LinkedList<>();
     
     public static void main(String[] args) throws FileNotFoundException {
         CargarDatos.cargarArchivos();

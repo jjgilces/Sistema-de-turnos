@@ -8,18 +8,12 @@ package controlador;
 import Serializado.Alerta;
 import static Serializado.Alerta.mostrarAlerta;
 import Serializado.BaseDatos;
-import Serializado.Data;
-import static Serializado.Data.puestosAsignados;
-import java.io.FileNotFoundException;
+import static controlador.Data.puestosAsignados;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -28,7 +22,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import modelo.Paciente;
 import modelo.Sintoma;
-import static Serializado.Data.sintomas;
+import static controlador.Data.sintomas;
 import modelo.CrearCita;
 import sistemadeturnos.SistemaDeTurnos;
 
@@ -59,6 +53,8 @@ public class FormularioPacienteController implements Initializable,Ventana {
     private TablaController tabla;
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -77,7 +73,7 @@ public class FormularioPacienteController implements Initializable,Ventana {
             }
             Paciente p1 = new Paciente(txtNombre.getText(), txtApellidos.getText(), Integer.parseInt(txtEdad.getText()), genero,sintoma);
             SistemaDeTurnos.listaPacientes.add(p1);
-            BaseDatos.listaPacientes.add(p1);
+          //  BaseDatos.listaPacientes.add(p1);
 //            BaseDatos.guardarPacientes();
             //Hacer Excepcion de los turnos!
             boolean mostrar = CrearCita.asignarPuestoATurno(p1, puestosAsignados);      
