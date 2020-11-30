@@ -111,13 +111,10 @@ public class TablaController {
         }
         
     }
-<<<<<<< HEAD
+
     
     public static void updateTable(Cita c) {
         tableList.add(c);
     }
     
-=======
-
->>>>>>> 5e62593ae99bc8b22e7ca928e709394d532a2b63
 }
