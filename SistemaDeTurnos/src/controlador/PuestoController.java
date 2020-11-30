@@ -25,7 +25,9 @@ import modelo.Puesto;
  * @author user
  */
 public class PuestoController implements Initializable,Ventana {
-
+    
+    public int turno =1 ;
+    
     @FXML
     private Button btnCrearPuesto;
     @FXML
@@ -49,12 +51,21 @@ public class PuestoController implements Initializable,Ventana {
     }  
     @FXML
     void guardarPuesto(ActionEvent event) {
-        Puesto puesto = new Puesto(1, (Medico) cbMedico.getValue());
-        medicos.remove(cbMedico.getValue());
-        cbMedico.getItems().remove(cbMedico.getValue());
+        if (validate(cbMedico)) {
+            Alerta.mostrarAlerta("No hay ninguna seleccion","Verifique su seleccion", Alert.AlertType.ERROR);
+        }
+        else{
+        Medico med = (Medico) cbMedico.getValue();
+        Puesto puesto = new Puesto(turno, med);
+        turno++;
+        medicos.remove(med);
+        cbMedico.getItems().remove(med);
         puestosAsignados.add(puesto);
-        System.out.println(medicos);
         Alerta.Confirmar("Puesto asignado", Alert.AlertType.CONFIRMATION);
+        }
     }
-
+    
+    public boolean validate(ComboBox c) {
+        return c.getValue() == null;
+    }
 }
