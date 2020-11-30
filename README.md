@@ -21,6 +21,23 @@
 [contributors-url]: https://github.com/jaimepizarr/ProyectoEstrucutras2.0/graphs/contributors
 
 El proyecto es dirigido para sistemas de turnos en los hospitales, que el objetivo es gestionar, ordenar y optimizar el proceso de atención de los pacientes de manera presencial.
+
+## Actores
+
+- #### Sintomas 
+    ![](pg)
+
+- #### Puestos
+    ![](to.png)
+    
+- #### Medicos 
+    ![](turas/retiro.jpg)
+    
+- #### Paciente
+    ![](httJ/main/Capturas/log_txt.png)
+    
+
+
 # Funcionamiento:
 
 El paciente llega al consultorio y es registrado por la secretaria, y espera que se le asigne un turno.
@@ -68,20 +85,6 @@ Desde los puestos de atención, los medico podrán llamar a los pacientes que se
 - Implementar un requerimiento utilizando el paradigma orientado a aspectos.
 
 
-## Actores
-
-- #### Sintomas 
-    ![](pg)
-
-- #### Puestos
-    ![](to.png)
-    
-- #### Medicos 
-    ![](turas/retiro.jpg)
-    
-- #### Paciente
-    ![](httJ/main/Capturas/log_txt.png)
-    
 ## Autores:
 <div>
 <a title="Hatus Pellegrini" href="https://github.com/HatusP">
