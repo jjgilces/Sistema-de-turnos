@@ -8,7 +8,7 @@ import java.util.Random;
  * @author Johan
  */
 public class GeneradorTurno {
-    public static Random  numAleatorio = new Random();
+    public static final Random  numAleatorio = new Random();
     public static Turno generarTurnoConPaciente(Paciente p){
         int n = numAleatorio.nextInt(300-100+1) + 100;
         Sintoma s = p.getSintoma();
@@ -31,6 +31,9 @@ public class GeneradorTurno {
                 break;
             case 5:
                 letra = "F";
+                break;
+            default:
+                letra = "G";
                 break;
         }
         String nTurno = letra + n;

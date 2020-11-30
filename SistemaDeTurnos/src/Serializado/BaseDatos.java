@@ -25,8 +25,6 @@ public class BaseDatos {
 
     //Los objetos Paciente son serializados en esta lista de Pacientes y guardados en un archivo
     //Este modelo se puede extender a para guardar los datos de cualquier objeto dentro del programa
-    public static ArrayList<Paciente> listaPacientes = new ArrayList<>();
-    public static ArrayList<Medico> listaMedicos = new ArrayList<>();
 
 
 }
