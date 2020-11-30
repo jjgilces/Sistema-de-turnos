@@ -45,6 +45,18 @@ El paciente llega al consultorio y es registrado por la secretaria, y espera que
     </p>
   </div>
   
+   <p align="center">
+  Registro del Doctor en el sistema
+</p>
+  <div>
+  <p align ="center">
+       <img src="https://github.com/jjgilces/Sistema-de-turnos/blob/main/image/RegistroDoctor.png"
+      alt="Captura 2"
+      width="500" height="400">
+    </p>
+  </div>
+  
+  
  
 
 # Atencion
