@@ -105,7 +105,6 @@ public class TablaController {
         }
         
     }
-    
     public static void updateTable() {
         tableList.clear();
         tableList.addAll(citas);
