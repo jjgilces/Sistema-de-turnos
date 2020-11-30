@@ -29,6 +29,8 @@ El paciente se dirige a la sala de espera donde aguarda observando pantallas dig
   alt="Captura 1"
   width="500" height="400">
 </p>
+##Registros
+##Atencion
 Desde los puestos de atención, los medico podrán llamar a los pacientes que se encuentran en espera. Completando así el flujo del paciente en el hospital
 <p align="center">
 <img src="https://github.com/jaimepizarr/ProyectoEstrucutras2.0/blob/master/images/2.png?raw=true"
