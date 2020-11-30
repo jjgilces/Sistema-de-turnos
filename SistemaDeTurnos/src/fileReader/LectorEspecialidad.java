@@ -27,7 +27,6 @@ public class LectorEspecialidad {
                 especialidades.add(especialidad.trim());
             }
         } catch (IOException ex) {
-            System.out.println(ex.getCause());
             Logger.getLogger(Sintoma.class.getName()).log(Level.SEVERE, null, ex);
             
         }

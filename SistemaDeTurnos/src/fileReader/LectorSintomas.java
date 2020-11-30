@@ -31,7 +31,6 @@ public class LectorSintomas{
                 sintomas.add(new Sintoma(separado[0],Integer.parseInt(separado[1].trim())));
             }
         } catch (IOException ex) {
-            System.out.println(ex.getCause());
             Logger.getLogger(Sintoma.class.getName()).log(Level.SEVERE, null, ex);
             
         }
