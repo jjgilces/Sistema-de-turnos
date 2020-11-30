@@ -95,4 +95,8 @@ public class TablaController {
         tableList.clear();
         tableList.addAll(citas);
     }
+    
+    public static void removerCita(){
+        tableList.remove(0);
+    }
 }
