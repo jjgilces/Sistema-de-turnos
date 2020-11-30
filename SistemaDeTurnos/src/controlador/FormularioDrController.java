@@ -11,7 +11,6 @@ import static controlador.Data.medicos;
 import java.net.URL;
 import java.util.LinkedList;
 import java.util.ResourceBundle;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -54,7 +53,6 @@ public class FormularioDrController implements Initializable {
     private Label labelLast;
 
 
-    public LinkedList<Medico> med = new LinkedList<>();
 
     @Override
 

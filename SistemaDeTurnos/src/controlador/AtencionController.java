@@ -8,7 +8,6 @@ package controlador;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.net.DatagramPacket;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -84,9 +83,7 @@ public class AtencionController implements Initializable, Ventana {
         File f = new File("RegistroAtencion.txt");
         try( FileWriter fr = new FileWriter(f,true) ) {
             Atencion a = new Atencion(paciente,txtAreaReceta.getText(),txtAreaDiagnostico.getText());
-           
             fr.write(a.toString());
-            
         } catch (IOException ex) {
             Logger.getLogger(AtencionController.class.getName()).log(Level.SEVERE, null, ex);
         }
