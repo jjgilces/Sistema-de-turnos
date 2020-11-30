@@ -8,6 +8,7 @@ package controlador;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.DatagramPacket;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -99,6 +100,7 @@ public class AtencionController implements Initializable, Ventana {
                 Logger.getLogger(AtencionController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        
             TablaController.removerCita();
             Stage stage = (Stage) btnGuardar.getScene().getWindow();
             stage.close();

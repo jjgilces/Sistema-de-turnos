@@ -59,10 +59,11 @@ public class TablaController {
     }
  
      @FXML
-    private void antenderPaciente(MouseEvent event) {
+    private void antenderPaciente(MouseEvent event){
         try {
             Cita citaSeleccionada = tbTurnoCita.getSelectionModel().getSelectedItem();
-            Cita cita = tbTurnoCita.getItems().get(0); 
+            Cita cita = new Cita();
+            if(!tbTurnoCita.getItems().isEmpty()) cita = tbTurnoCita.getItems().get(0);
             if(citaSeleccionada.equals(cita)){
             Stage anotherStage = new Stage();
             FXMLLoader loader1 = new FXMLLoader(getClass().getResource("/vista/Atencion.fxml"));
@@ -75,7 +76,7 @@ public class TablaController {
             }else{
                 Alerta.mostrarAlerta("Por favor, atender al primer paciente", "Error de prioridad", Alert.AlertType.INFORMATION);
             }
-        }catch(NullPointerException ex){
+        }catch(NullPointerException ex ){
             Alerta.mostrarAlerta("No ha seleccionado una cita ", "Error", Alert.AlertType.ERROR);
         } 
         catch (IOException ex) {
@@ -89,6 +90,8 @@ public class TablaController {
     }
     
     public static void removerCita(){
+        Puesto puesto = tableList.get(0).getPuesto();
+        Data.puestosAsignados.offer(puesto);
         tableList.remove(0);
     }
 }

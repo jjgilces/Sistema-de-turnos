@@ -13,6 +13,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
+import modelo.CrearCita;
 import modelo.Medico;
 import modelo.Puesto;
 
@@ -59,6 +60,9 @@ public class PuestoController implements Initializable,Ventana {
         cbMedico.getItems().remove(med);
         puestosAsignados.add(puesto);
         Alerta.Confirmar("Puesto asignado", Alert.AlertType.CONFIRMATION);
+        }
+        if(!Data.pacientes.isEmpty()) {CrearCita.asignarPuestoATurno(Data.pacientes.poll(), puestosAsignados);
+            TablaController.updateTable();
         }
     }
     

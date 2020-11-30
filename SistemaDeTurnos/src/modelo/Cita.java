@@ -11,6 +11,9 @@ public class Cita implements Serializable{
     private Turno turno;
     private Puesto puesto;
 
+    public Cita() {
+    }
+
     public Cita(Turno turno, Puesto puesto) {
         this.turno = turno;
         this.puesto = puesto;
