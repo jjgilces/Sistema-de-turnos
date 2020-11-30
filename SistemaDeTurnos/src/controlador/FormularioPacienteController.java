@@ -7,7 +7,6 @@ package controlador;
 
 import Serializado.Alerta;
 import static Serializado.Alerta.mostrarAlerta;
-import static controlador.Data.puestosAsignados;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -21,8 +20,10 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import modelo.Paciente;
 import modelo.Sintoma;
-import static controlador.Data.sintomas;
 import modelo.CrearCita;
+import static sistemadeturnos.SistemaDeTurnos.pacientes;
+import static sistemadeturnos.SistemaDeTurnos.puestosAsignados;
+import static sistemadeturnos.SistemaDeTurnos.sintomas;
 
 
 /**
@@ -74,9 +75,8 @@ public class FormularioPacienteController implements Initializable,Ventana {
                 TablaController.updateTable();
             }
             else {
-                Data.pacientes.offer(p1);
-                System.out.println(Data.pacientes);
-                Alerta.Confirmar("No tenemos medicos disponibles", AlertType.INFORMATION);
+                pacientes.offer(p1);
+                mostrarAlerta("En breve será atendido por un doctor.","Medicos Insuficientes", AlertType.INFORMATION);
             }
             
             txtNombre.clear();

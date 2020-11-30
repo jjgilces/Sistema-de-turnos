@@ -6,7 +6,6 @@
 package controlador;
 
 import Serializado.Alerta;
-import static controlador.Data.citas;
 import java.io.IOException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -24,6 +23,7 @@ import javafx.stage.Stage;
 import modelo.Cita;
 import modelo.Puesto;
 import modelo.Turno;
+import static sistemadeturnos.SistemaDeTurnos.citas;
 
 /**
  *
@@ -91,7 +91,7 @@ public class TablaController {
     public static void removerCita(){
 //        Puesto puesto = tableList.get(0).getPuesto();
 //        Data.puestosAsignados.offer(puesto);
-        Data.citas.poll();
+        citas.poll();
          updateTable();
     }
 }

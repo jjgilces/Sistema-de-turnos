@@ -7,6 +7,7 @@ package fileReader;
 
 import controlador.Data;
 import modelo.Medico;
+import static sistemadeturnos.SistemaDeTurnos.medicos;
 
 /**
  *
@@ -19,8 +20,8 @@ public class CargarDatos {
         LectorVideos.leerArchivoVideos();
         Medico m1= new Medico("Johan", "Gilces Reyes", "Cardiólogo");
         Medico m2 = new Medico("Hatus", "Parra", "Medicina General");
-        Data.medicos.add(m2);
-        Data.medicos.add(m1);     
+        medicos.add(m2);
+        medicos.add(m1);     
                 
     }
 }

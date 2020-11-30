@@ -1,10 +1,11 @@
 
 package modelo;
 
-import static controlador.Data.citas;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import static sistemadeturnos.SistemaDeTurnos.citas;
 
 /**
  *

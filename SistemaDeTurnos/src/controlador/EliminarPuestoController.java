@@ -2,8 +2,6 @@
 package controlador;
 
 import Serializado.Alerta;
-import static controlador.Data.citas;
-import static controlador.Data.puestosAsignados;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -16,6 +14,9 @@ import javafx.stage.Stage;
 import modelo.Cita;
 import modelo.Medico;
 import modelo.Puesto;
+import static sistemadeturnos.SistemaDeTurnos.citas;
+import static sistemadeturnos.SistemaDeTurnos.medicos;
+import static sistemadeturnos.SistemaDeTurnos.puestosAsignados;
 
 /**
  * FXML Controller class
@@ -36,7 +37,7 @@ public class EliminarPuestoController implements Initializable,Ventana {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        CBpuestoasig.getItems().addAll(Data.puestosAsignados);
+        CBpuestoasig.getItems().addAll(puestosAsignados);
     }    
 
     @Override
@@ -53,7 +54,7 @@ public class EliminarPuestoController implements Initializable,Ventana {
         else  {
             Puesto p = (Puesto) CBpuestoasig.getValue();
             if (delete(p.getMedico())) {
-                Data.medicos.add(p.getMedico());
+                medicos.add(p.getMedico());
                 puestosAsignados.remove(p);
                 CBpuestoasig.getItems().remove(p);
                     Alerta.confirmPuestoDelete();    
@@ -61,7 +62,6 @@ public class EliminarPuestoController implements Initializable,Ventana {
             else 
                 Alerta.mostrarAlerta("Este doctor se encuentra asignado a una cita", "Espere un momento", Alert.AlertType.ERROR);
         }
-           System.out.println(Data.citas);
     }
     
     public boolean validate(ComboBox c) {

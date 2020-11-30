@@ -2,8 +2,6 @@
 package controlador;
 
 import Serializado.Alerta;
-import static controlador.Data.medicos;
-import static controlador.Data.puestosAsignados;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -16,6 +14,9 @@ import javafx.stage.Stage;
 import modelo.CrearCita;
 import modelo.Medico;
 import modelo.Puesto;
+import static sistemadeturnos.SistemaDeTurnos.medicos;
+import static sistemadeturnos.SistemaDeTurnos.pacientes;
+import static sistemadeturnos.SistemaDeTurnos.puestosAsignados;
 
 /**
  * FXML Controller class
@@ -68,7 +69,7 @@ public class PuestoController implements Initializable,Ventana {
         puestosAsignados.add(puesto);
         Alerta.Confirmar("Puesto asignado", Alert.AlertType.CONFIRMATION);
         }
-        if(!Data.pacientes.isEmpty()) {CrearCita.asignarPuestoATurno(Data.pacientes.poll(), puestosAsignados);
+        if(!pacientes.isEmpty()) {CrearCita.asignarPuestoATurno(pacientes.poll(), puestosAsignados);
             TablaController.updateTable();
         }
     }

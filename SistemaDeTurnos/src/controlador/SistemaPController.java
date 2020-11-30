@@ -7,12 +7,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.media.MediaView;
-import static controlador.Data.videos;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import modelo.Cita;
 import modelo.Puesto;
 import modelo.Turno;
+import static sistemadeturnos.SistemaDeTurnos.videos;
 
 /**
  * FXML Controller class

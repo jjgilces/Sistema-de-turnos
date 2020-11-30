@@ -7,9 +7,7 @@
 package controlador;
 
 import Serializado.Alerta;
-import static controlador.Data.medicos;
 import java.net.URL;
-import java.util.LinkedList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,8 +19,8 @@ import javafx.scene.control.Label;
 import modelo.Medico;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
-import static controlador.Data.especialidades;
+import static sistemadeturnos.SistemaDeTurnos.especialidades;
+import static sistemadeturnos.SistemaDeTurnos.medicos;
 
 /**
  * FXML Controller class
