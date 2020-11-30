@@ -26,6 +26,16 @@ El proyecto es dirigido para sistemas de turnos en los hospitales, que el objeti
 # Funcionamiento:
 
 El paciente llega al consultorio y es registrado por la secretaria, y espera que se le asigne un turno.
+Para que se pueda generar el turno, debe haber un doctor asignado a un puesto. Un puesto esta formado por un doctor y por un numero
+que indicara el orden de los mismos ( puesto).
+
+Si existe un doctor disponible con un puesto, se generara un turno y seguidamente una cita.
+
+El paciente sera agregado a la lista de turnos y se lo atendera de acuerdo a la prioridad del sintoma que tiene.
+
+
+
+# Vistas
  <div>
   <p align ="center">
 <img src="https://github.com/jjgilces/Sistema-de-turnos/blob/main/image/Principal.png"
