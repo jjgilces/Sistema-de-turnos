@@ -82,12 +82,12 @@ public class TablaController {
             FXMLLoader loader1 = new FXMLLoader(getClass().getResource("/vista/Atencion.fxml"));
             Parent root1 = loader1.load();
             pantallaAternderPaciente = loader1.getController();
-//            pantallaAternderPaciente.fillInData(turnoSelect.getPaciente());
+            pantallaAternderPaciente.fillInData(turnoSelect.getPaciente());
             Scene scene1 = new Scene(root1);
-//            pantallaAternderPaciente.setPrincipal(this);
             anotherStage.setScene(scene1);
             anotherStage.show();
         }catch(NullPointerException ex){
+            System.out.println(ex);
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error Alert");
             alert.setHeaderText("No ha seleccionado un turno o la tabla está vacía");
@@ -97,5 +97,7 @@ public class TablaController {
         catch (IOException ex) {
             System.out.println(ex);
         }
+        
     }
+
 }
