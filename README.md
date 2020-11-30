@@ -93,6 +93,22 @@ El paciente llega al consultorio y es registrado por la secretaria, y espera que
 
 
 
+
+
+
+  <p align="center">
+    UML MODEL
+</p>
+  <div>
+  <p align ="center">
+       <img src="https://github.com/jjgilces/Sistema-de-turnos/blob/main/image/UML.png"
+      alt="Captura 2"
+      width="500" height="400">
+    </p>
+  </div>
+
+
+
 ## Autores:
 <div>
 <a title="Hatus Pellegrini" href="https://github.com/HatusP">
