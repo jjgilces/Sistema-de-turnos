@@ -38,7 +38,6 @@ public class GeneradorTurno {
         }
         String nTurno = letra + n;
         return new Turno(nTurno,p);
-                
     }
 
 }

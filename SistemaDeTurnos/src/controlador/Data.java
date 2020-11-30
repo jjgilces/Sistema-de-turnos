@@ -27,7 +27,7 @@ public class Data {
      public static final List<String> especialidades = new LinkedList<>(); 
      public static final CircularSimplyLinkedList<String> videos = new CircularSimplyLinkedList<>();
      public static final PriorityQueue<Paciente> pacientes = new PriorityQueue<>((Paciente p1, Paciente p2)-> p1.getSintoma().getPrioridad()-p2.getSintoma().getPrioridad());
-     public static final LinkedList<Medico> medicos = new LinkedList<>();
+     public static final List<Medico> medicos = new LinkedList<>();
      public static final PriorityQueue<Cita> citas= new PriorityQueue<>((Cita p1, Cita p2)-> p1.getTurno().getPaciente().getSintoma().getPrioridad()-p2.getTurno().getPaciente().getSintoma().getPrioridad());
      public static final Queue<Puesto> puestosAsignados = new LinkedList<>();
      

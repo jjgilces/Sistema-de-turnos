@@ -53,7 +53,6 @@ public class FormularioDrController implements Initializable {
     @FXML
     private Label labelLast;
 
-    private ObservableList<String> items;
 
     public LinkedList<Medico> med = new LinkedList<>();
 

@@ -7,7 +7,6 @@ package controlador;
 
 import Serializado.Alerta;
 import static Serializado.Alerta.mostrarAlerta;
-import Serializado.BaseDatos;
 import static controlador.Data.puestosAsignados;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -24,7 +23,7 @@ import modelo.Paciente;
 import modelo.Sintoma;
 import static controlador.Data.sintomas;
 import modelo.CrearCita;
-import sistemadeturnos.SistemaDeTurnos;
+
 
 /**
  * FXML Controller class
@@ -42,15 +41,11 @@ public class FormularioPacienteController implements Initializable,Ventana {
     @FXML
     private RadioButton rbtMasculino;
     @FXML
-    private RadioButton rbtFemenino;
-    @FXML
     private ComboBox cboSintoma;
-    @FXML
-    private Button btnCancelar;
     @FXML
     private Button btnRegistrar;
 
-    private TablaController tabla;
+    public static final String text = "Datos Incorrectos";
     /**
      * Initializes the controller class.
      * @param url
@@ -62,6 +57,7 @@ public class FormularioPacienteController implements Initializable,Ventana {
     }
 
     public void clickRegistrar(ActionEvent e) {
+        
         try {
             String genero = rbtMasculino.isSelected() ? "Masculino" : "Femenino";
             Sintoma sintoma = (Sintoma) cboSintoma.getValue();
@@ -72,8 +68,6 @@ public class FormularioPacienteController implements Initializable,Ventana {
                 throw new IllegalArgumentException();
             }
             Paciente p1 = new Paciente(txtNombre.getText(), txtApellidos.getText(), Integer.parseInt(txtEdad.getText()), genero,sintoma);
-//            BaseDatos.guardarPacientes();
-            //Hacer Excepcion de los turnos!
             boolean mostrar = CrearCita.asignarPuestoATurno(p1, puestosAsignados);      
             if(mostrar) {
                 Alerta.Confirmar("Espere su turno, en breve lo atendemos", AlertType.CONFIRMATION);
@@ -89,18 +83,17 @@ public class FormularioPacienteController implements Initializable,Ventana {
             txtEdad.clear();         
         } catch (NumberFormatException ex) {
             txtEdad.clear();
-            mostrarAlerta("Ingrese solo numeros porfavor","Datos incorrectos", AlertType.ERROR);
+            mostrarAlerta("Ingrese solo numeros porfavor",text, AlertType.ERROR);
         } catch (IllegalArgumentException ex) {
             if (!(isAlpha(txtNombre.getText()) && isAlpha(txtApellidos.getText()))) {
-                mostrarAlerta("En los campos Nombre y Apellido utilice unicamente letras porfavor.","Datos incorrectos", AlertType.ERROR);
+                mostrarAlerta("En los campos Nombre y Apellido utilice unicamente letras porfavor.",text, AlertType.ERROR);
             }
             if (Integer.parseInt(txtEdad.getText()) < 0) {
                 txtEdad.clear();
-                mostrarAlerta("Ingrese solo numeros positivos porfavor.","Datos incorrectos", AlertType.ERROR);
+                mostrarAlerta("Ingrese solo numeros positivos porfavor.",text, AlertType.ERROR);
             }
 
         }
-       // Alerta.Confirmar("Paciente creado con éxito", AlertType.CONFIRMATION);
         
     }
 

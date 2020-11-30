@@ -14,9 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -60,7 +58,6 @@ public class AtencionController implements Initializable, Ventana {
     
     
     private Paciente paciente;
-    private SistemaPController pantallaPrincipal;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -83,25 +80,18 @@ public class AtencionController implements Initializable, Ventana {
     }
     
     public void clickGuardar(ActionEvent e){
-        FileWriter fr = null;
-        try {
+        File f = new File("RegistroAtencion.txt");
+        try( FileWriter fr = new FileWriter(f,true) ) {
             Atencion a = new Atencion(paciente,txtAreaReceta.getText(),txtAreaDiagnostico.getText());
-            File f = new File("RegistroAtencion.txt");
-            fr = new FileWriter(f,true);
+           
             fr.write(a.toString());
             
         } catch (IOException ex) {
             Logger.getLogger(AtencionController.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                fr.close();
-            } catch (IOException ex) {
-                Logger.getLogger(AtencionController.class.getName()).log(Level.SEVERE, null, ex);
-            }
         }
-            TablaController.removerCita();
-            Stage stage = (Stage) btnGuardar.getScene().getWindow();
-            stage.close();
+        TablaController.removerCita();
+        Stage stage = (Stage) btnGuardar.getScene().getWindow();
+        stage.close();
    
         
     }

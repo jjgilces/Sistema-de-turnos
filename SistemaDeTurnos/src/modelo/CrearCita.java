@@ -3,6 +3,7 @@ package modelo;
 
 import static controlador.Data.citas;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 /**
@@ -10,7 +11,7 @@ import java.util.Queue;
  * @author Johan
  */
 public class CrearCita {
-    public static LinkedList<Cita> l = new LinkedList<>();
+    public static List<Cita> l = new LinkedList<>();
     public static boolean asignarPuestoATurno(Paciente p, Queue<Puesto> puestosAsignados ) {
         if(!puestosAsignados.isEmpty()){
             Turno turno =  GeneradorTurno.generarTurnoConPaciente(p);

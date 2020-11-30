@@ -76,17 +76,4 @@ public class EliminarPuestoController implements Initializable,Ventana {
     }
     
     
-//        @FXML
-//    void eliminarPuesto(){
-//        Optional<ButtonType> result = Alerts.confirmPuestoDelete();
-//        if(result.get()==ButtonType.OK){
-//            Puesto puesto = cmbPuesto.getValue();
-//            Medico med = puesto.getMedico();
-//            med.setPuesto(null);
-//            LPuesto.remove(puesto);
-//            LMedico.add(med);
-//            loadData();
-//            
-//        }  
-//    }
 }

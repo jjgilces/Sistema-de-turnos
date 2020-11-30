@@ -8,7 +8,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.media.MediaView;
 import static controlador.Data.videos;
-import javafx.collections.ObservableList;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import modelo.Cita;
@@ -41,9 +40,10 @@ public class SistemaPController implements Initializable {
     @FXML
     private TableColumn<Puesto,Cita> colPuesto;
     @FXML
-    public TableView<Cita> tbTurnoCita= new TableView<Cita>();
+    public TableView<Cita> tbTurnoCita= new TableView<>();
+    
     public static TableView<Cita> tablaView ;
-    private static ObservableList<Cita> tableElement;
+    
     private TablaController controladorTabla = new TablaController(colTurno, colPuesto, tbTurnoCita);
 
     public TablaController getControladorTabla() {

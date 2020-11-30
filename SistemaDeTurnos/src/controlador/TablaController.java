@@ -37,10 +37,8 @@ public class TablaController {
     @FXML
     private final  TableView<Cita> tbTurnoCita;
     
-    private SistemaPController principal;
     
     public static  ObservableList<Cita> tableList;
-    private AtencionController pantallaAternderPaciente;
     public TablaController(TableColumn<Turno, Cita> colTurno, TableColumn<Puesto, Cita> colPuesto, TableView<Cita> tbTurnoCita) {
         this.colTurno = colTurno;
         this.colPuesto = colPuesto;
@@ -61,6 +59,7 @@ public class TablaController {
      @FXML
     private void antenderPaciente(MouseEvent event) {
         try {
+            AtencionController pantallaAternderPaciente;
             Cita citaSeleccionada = tbTurnoCita.getSelectionModel().getSelectedItem();
             Cita cita = tbTurnoCita.getItems().get(0); 
             if(citaSeleccionada.equals(cita)){

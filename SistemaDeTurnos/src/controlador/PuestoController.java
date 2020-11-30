@@ -34,12 +34,7 @@ public class PuestoController implements Initializable,Ventana {
     public void initialize(URL url, ResourceBundle rb) {
         cbMedico.getItems().addAll(medicos);
     }  
-//    @FXML
-//    void CreacionPuesto(ActionEvent e){
-//        Queue<Medico> medicos= Data.medicosAsignados;
-//        if(medicos.isEmpty()) SistemaPController.mostrarAlerta("No tenemo medicos disponibles",Alert.AlertType.INFORMATION);
-//        else{Puesto puesto = new Puesto(1, medicos.poll());}
-//    }
+
     
     @Override
      public  void clickCancelar(ActionEvent e){

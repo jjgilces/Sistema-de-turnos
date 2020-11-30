@@ -28,7 +28,9 @@ public class BotonesController {
 
     @FXML
     private final Button btnEliminarPuesto;
-
+        
+    private static final String name = "Formulario Paciente";
+    
     public BotonesController(Button btnRPaciente, Button btnRDoctor, Button btnCrearPuesto, Button btnEliminarPuesto) {
        
         this.btnRPaciente = btnRPaciente;
@@ -49,7 +51,7 @@ public class BotonesController {
             Parent root = FXMLLoader.load(getClass().getResource("/vista/FormularioPaciente.fxml"));
             Stage stage = new Stage();
             Scene scene = new Scene(root);
-            stage.setTitle("Formulario Paciente");
+            stage.setTitle(name);
             stage.setScene(scene);
             stage.show();
         } catch (IOException ex) {
@@ -61,7 +63,7 @@ public class BotonesController {
             Parent root = FXMLLoader.load(getClass().getResource("/vista/FormularioDr.fxml"));
             Stage stage = new Stage();
             Scene scene = new Scene(root);
-            stage.setTitle("Formulario Paciente");
+            stage.setTitle(name);
             stage.setScene(scene);
             stage.show();
         } catch (IOException ex) {
@@ -73,7 +75,7 @@ public class BotonesController {
             Parent root = FXMLLoader.load(getClass().getResource("/vista/Puesto.fxml"));
             Stage stage = new Stage();
             Scene scene = new Scene(root);
-            stage.setTitle("Formulario Paciente");
+            stage.setTitle(name);
             stage.setScene(scene);
             stage.show();
         } catch (IOException ex) {
@@ -85,33 +87,12 @@ public class BotonesController {
             Parent root = FXMLLoader.load(getClass().getResource("/vista/EliminarPuesto.fxml"));
             Stage stage = new Stage();
             Scene scene = new Scene(root);
-            stage.setTitle("Formulario Paciente");
+            stage.setTitle(name);
             stage.setScene(scene);
             stage.show();
         } catch (IOException ex) {
             Logger.getLogger(SistemaPController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-//    public static void eliminarPuesto(){
-//        Optional<ButtonType> result = Alerts.confirmPuestoDelete();
-//        if(result.get()==ButtonType.OK){
-//            Puesto puesto = cmbPuesto.getValue();
-//            Medico med = puesto.getMedico();
-//            med.setPuesto(null);
-//            LPuesto.remove(puesto);
-//            LMedico.add(med);
-//            loadData();
-//            
-//        }  
-//    }
-//     public static void guardarPuesto(ActionEvent event) {
-//        Puesto puesto = new Puesto(txtNumeroPuesto.getText(), cmbMedicoresponsable.getValue());
-//        cmbMedicoresponsable.getValue().setPuesto(puesto);
-//        principal.getPuestosLibres().add(puesto);
-//        principal.asignarPuestoATurno();
-//        LPuesto.add(puesto);
-//        loadData();
-//        txtNumeroPuesto.setText("");
-//        cmbMedicoresponsable.setValue(null);
-//    }
+
 }

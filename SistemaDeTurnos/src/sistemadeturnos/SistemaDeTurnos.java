@@ -1,17 +1,10 @@
 
 package sistemadeturnos;
 
-import Serializado.BaseDatos;
-import static controlador.Data.citas;
-import static controlador.Data.sintomas;
 import fileReader.CargarDatos;
-import fileReader.LectorSintomas;
-import fileReader.LectorVideos;
-import fileReader.LectorEspecialidad;
 import java.io.FileNotFoundException;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.PriorityQueue;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
