@@ -69,22 +69,7 @@ public class SistemaPController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        colTurno.setCellValueFactory(new PropertyValueFactory("turno"));
-        colPuesto.setCellValueFactory(new PropertyValueFactory("puesto"));
-        tbTurnoCita.setEditable(true);
-        tableList = FXCollections.observableArrayList();
-        Sintoma s = sintomas.get(2);
-        Paciente p = new Paciente("Juan", "Gilces", 10, "masculino", s);
-        Medico medico = new Medico("Jose", "PEPE", "Cardiolgo");
-        Puesto puesto = new Puesto(2, medico);
-        Turno turno = new Turno("A209", p);
-        Cita c = new Cita(turno, puesto);
-        tableList.add(c);
-        tableList.add(c);
-        tableList.add(c);
-        tbTurnoCita.getItems().add(c);
-        tbTurnoCita.setPlaceholder(new Text("Johan"));
-        tbTurnoCita.setItems(tableList);
+        new TablaController(colTurno, colPuesto, tbTurnoCita).mostrarTabla();
         new VisorVideos(mediaView).createMediaView(videos);
         new BotonesController(btnRPaciente, btnRDoctor, btnCrearPuesto, btnEliminarPuesto).setearbotones();
     }
