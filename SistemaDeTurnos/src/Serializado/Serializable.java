@@ -9,7 +9,6 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import sistemadeturnos.SistemaDeTurnos;
 import static sistemadeturnos.SistemaDeTurnos.medicos;
 import static sistemadeturnos.SistemaDeTurnos.pacientes;
 import static sistemadeturnos.SistemaDeTurnos.puestosAsignados;
@@ -18,16 +17,16 @@ import static sistemadeturnos.SistemaDeTurnos.puestosAsignados;
  *
  * @author JG
  */
-public class Serializable {
+public abstract class Serializable {
+    
     public static void  guardarObjeto(String source, Object o){
-        try {
-            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("src/recursos/archivos/"+source));
+        try (ObjectOutputStream oos=new ObjectOutputStream(new FileOutputStream("src/recursos/archivos/"+source));){
             oos.writeObject(o);
             oos.flush();
         } catch (FileNotFoundException ex) {
-            System.out.println("Archivo"+source+ex);
+            System.err.println("Archivo"+source+ex);
         } catch (IOException ex) {
-            System.out.println(source);
+            System.err.println(source);
         }
     }
     public static void serializarListas() {

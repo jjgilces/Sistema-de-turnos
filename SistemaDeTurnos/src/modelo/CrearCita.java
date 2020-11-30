@@ -6,12 +6,11 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import static sistemadeturnos.SistemaDeTurnos.citas;
-
 /**
  *
  * @author Johan
  */
-public class CrearCita {
+public abstract class CrearCita {
     public static List<Cita> l = new LinkedList<>();
     public static boolean asignarPuestoATurno(Paciente p, Queue<Puesto> puestosAsignados ) {
         if(!puestosAsignados.isEmpty()){
