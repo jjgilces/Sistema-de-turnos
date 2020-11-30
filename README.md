@@ -92,28 +92,6 @@ El paciente llega al consultorio y es registrado por la secretaria, y espera que
   </div>
 
 
-# Atencion
-Desde los puestos de atención, los medico podrán llamar a los pacientes que se encuentran en espera. Completando así el flujo del paciente en el hospital
-<p align="center">
-<img src="https://github.com/jaimepizarr/ProyectoEstrucutras2.0/blob/master/images/2.png?raw=true"
-  alt="Captura 1"
-  width="500" height="400">
-</p>
-
-
-# Registro
-</p>
-
-
-<p align="center">
-<img src="https://github.com/jaimepizarr/ProyectoEstrucutras2.0/blob/master/images/principal.png?raw=true"
-  alt="Captura 1"
-  width="550" height="400">
-</p>
-
-## Objetivos
-- Implementar un requerimiento utilizando el paradigma orientado a aspectos.
-
 
 ## Autores:
 <div>
