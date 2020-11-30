@@ -17,15 +17,16 @@ import static sistemadeturnos.SistemaDeTurnos.puestosAsignados;
  *
  * @author JG
  */
-public class Serializable {
+public abstract class Serializable {
+    
     public static void  guardarObjeto(String source, Object o){
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("src/recursos/archivos/"+source))){
             oos.writeObject(o);
             oos.flush();
         } catch (FileNotFoundException ex) {
-            System.out.println("Archivo"+source+ex);
+            System.err.println("Archivo"+source+ex);
         } catch (IOException ex) {
-            System.out.println(source);
+            System.err.println(source);
         }
     }
     public static void serializarListas() {
