@@ -74,9 +74,6 @@ public class TablaController {
         Turno turno = new Turno("A209", p);
         Turno turno2 =GeneradorTurno.generarTurnoConPaciente(p);
         Cita c = new Cita(turno, puesto);
-        citas.add(c);
-        tableList.add(c);
-        tableList.add(c);
         Cita c2 =new Cita(turno2, puesto);
         Cita c3 =new Cita(turno2, puesto2);
         tableList.add(c);
