@@ -82,7 +82,7 @@ public class AtencionController implements Initializable, Ventana {
     public void clickGuardar(ActionEvent e){
         File f = new File("RegistroAtencion.txt");
         try( FileWriter fr = new FileWriter(f,true) ) {
-            Atencion a = new Atencion(paciente,txtAreaReceta.getText(),txtAreaDiagnostico.getText());
+            Atencion a = new Atencion(paciente,txtAreaReceta.getText().trim(),txtAreaDiagnostico.getText().trim());
             fr.write(a.toString());
         } catch (IOException ex) {
             Logger.getLogger(AtencionController.class.getName()).log(Level.SEVERE, null, ex);
