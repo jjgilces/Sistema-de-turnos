@@ -25,7 +25,7 @@ El proyecto es dirigido para sistemas de turnos en los hospitales, que el objeti
 
 El paciente se dirige a la sala de espera donde aguarda observando pantallas digitales. En estas se podrá reproducir, además del avance de turnos, todo tipo de contenido audiovisual ya sea de carácter informativo o entretenimiento.
 <p align="center">
-<img src="https://github.com/jaimepizarr/ProyectoEstrucutras2.0/blob/master/images/1.png?raw=true"
+<img src="https://github.com/jjgilces/Sistema-de-turnos/blob/main/SistemaDeTurnos/src/recursos/images/age.png"
   alt="Captura 1"
   width="500" height="400">
 </p>
