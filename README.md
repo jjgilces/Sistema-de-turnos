@@ -1,25 +1,29 @@
-# 💻 Proyecto 01 | Sistema de ventas
+# 💻 Proyecto 01 |  SISTEMA DE TURNOS PARA HOSPITALES 🚀
 
 --- 
 <img src="https://github.com/jaimepizarr/ProyectoEstrucutras2.0/blob/master/images/logo.png?raw=true" align="right" />
 
-# SISTEMA DE TURNOS PARA HOSPITALES 🚀
 
 El proyecto es dirigido para sistemas de turnos en los hospitales, que el objetivo es gestionar, ordenar y optimizar el proceso de atención de los pacientes de manera presencial.
 
 ## Actores
 
 - #### Sintomas 
-    ![](pg)
+    -Nombre 
+    -Prioridad del 0 al 5, siendo el 0 el más grave.
 
 - #### Puestos
-    ![](to.png)
+    -Numero idenntificador
+    -Médico responsable del puesto
     
 - #### Medicos 
-    ![](turas/retiro.jpg)
+    -Nombre
+    -Especialidad
+    
     
 - #### Paciente
-    ![](httJ/main/Capturas/log_txt.png)
+    -Nombre
+    -Sintomas
     
 
 
