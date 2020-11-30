@@ -26,6 +26,16 @@ El proyecto es dirigido para sistemas de turnos en los hospitales, que el objeti
 # Funcionamiento:
 
 El paciente llega al consultorio y es registrado por la secretaria, y espera que se le asigne un turno.
+Para que se pueda generar el turno, debe haber un doctor asignado a un puesto. Un puesto esta formado por un doctor y por un numero
+que indicara el orden de los mismos ( puesto).
+
+Si existe un doctor disponible con un puesto, se generara un turno y seguidamente una cita.
+
+El paciente sera agregado a la lista de turnos y se lo atendera de acuerdo a la prioridad del sintoma que tiene.
+
+
+
+# Vistas
  <div>
   <p align ="center">
 <img src="https://github.com/jjgilces/Sistema-de-turnos/blob/main/image/Principal.png"
@@ -69,8 +79,8 @@ El paciente llega al consultorio y es registrado por la secretaria, y espera que
   </div>
   
   
-     <p align="center">
-  HOLA
+   <p align="center">
+  Eliminacion de Puestos
 </p>
   <div>
   <p align ="center">
@@ -92,27 +102,21 @@ El paciente llega al consultorio y es registrado por la secretaria, y espera que
   </div>
 
 
-# Atencion
-Desde los puestos de atención, los medico podrán llamar a los pacientes que se encuentran en espera. Completando así el flujo del paciente en el hospital
-<p align="center">
-<img src="https://github.com/jaimepizarr/ProyectoEstrucutras2.0/blob/master/images/2.png?raw=true"
-  alt="Captura 1"
-  width="500" height="400">
+
+
+
+
+  <p align="center">
+    UML MODEL
 </p>
+  <div>
+  <p align ="center">
+       <img src="https://github.com/jjgilces/Sistema-de-turnos/blob/main/image/UML.png"
+      alt="Captura 2"
+      width="500" height="400">
+    </p>
+  </div>
 
-
-# Registro
-</p>
-
-
-<p align="center">
-<img src="https://github.com/jaimepizarr/ProyectoEstrucutras2.0/blob/master/images/principal.png?raw=true"
-  alt="Captura 1"
-  width="550" height="400">
-</p>
-
-## Objetivos
-- Implementar un requerimiento utilizando el paradigma orientado a aspectos.
 
 
 ## Autores:
