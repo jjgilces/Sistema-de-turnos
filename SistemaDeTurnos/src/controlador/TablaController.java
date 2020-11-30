@@ -65,7 +65,7 @@ public class TablaController {
         tbTurnoCita.setItems(tableList);
         tbTurnoCita.setPlaceholder(new Text("No hay citas")); 
         System.out.println(sintomas);
-        Sintoma s = sintomas.get(0);
+        Sintoma s = new Sintoma("ENFERMERDAD", 12);
         System.out.println(s);
         Paciente p = new Paciente("Juan", "Gilces", 10, "masculino", s);
         Medico medico = new Medico("Jose", "PEPE", "Cardiolgo");
@@ -76,12 +76,6 @@ public class TablaController {
         Cita c = new Cita(turno, puesto);
         citas.add(c);
         tableList.add(c);
-        tableList.add(c);
-        Cita c2 =new Cita(turno2, puesto);
-        Cita c3 =new Cita(turno2, puesto2);
-        tableList.add(c);
-        tableList.add(c2);
-        tableList.add(c3);
 //        tbTurnoCita.getItems().add(c);
     }
  
@@ -111,13 +105,9 @@ public class TablaController {
         }
         
     }
-<<<<<<< HEAD
     
-    public static void updateTable(Cita c) {
-        tableList.add(c);
+    public static void updateTable() {
+        tableList.clear();
+        tableList.addAll(citas);
     }
-    
-=======
-
->>>>>>> 5e62593ae99bc8b22e7ca928e709394d532a2b63
 }

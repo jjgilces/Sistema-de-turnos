@@ -83,7 +83,7 @@ public class FormularioPacienteController implements Initializable,Ventana {
             boolean mostrar = CrearCita.asignarPuestoATurno(p1, puestosAsignados);      
             if(mostrar) {
                 Alerta.Confirmar("Espere su turno, en breve lo atendemos", AlertType.CONFIRMATION);
-                TablaController.updateTable(Serializado.Data.citas.poll());
+                TablaController.updateTable();
             }
             else {
                 Data.pacientes.offer(p1);

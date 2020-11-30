@@ -23,8 +23,6 @@ public class CrearCita {
             l.addAll(citas);
             citas.clear();
             citas.addAll(l);
-            System.out.println(l);
-            System.out.println(citas);
             return true;
         }
         return false;
