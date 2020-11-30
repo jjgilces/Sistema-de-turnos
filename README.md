@@ -57,7 +57,40 @@ El paciente llega al consultorio y es registrado por la secretaria, y espera que
   </div>
   
   
- 
+   <p align="center">
+  Asignacion de Puestos
+</p>
+  <div>
+  <p align ="center">
+       <img src="https://github.com/jjgilces/Sistema-de-turnos/blob/main/image/AsignacionPuesto.png"
+      alt="Captura 2"
+      width="500" height="400">
+    </p>
+  </div>
+  
+  
+    <p align="center">
+  Eliminacion de Puestos
+</p>
+  <div>
+  <p align ="center">
+       <img src="https://github.com/jjgilces/Sistema-de-turnos/blob/main/image/EliminarPuesto.png"
+      alt="Captura 2"
+      width="500" height="400">
+    </p>
+  </div>
+  
+  <p align="center">
+  Eliminacion de Puestos
+</p>
+  <div>
+  <p align ="center">
+       <img src="https://github.com/jjgilces/Sistema-de-turnos/blob/main/image/AtencionPaciente.png"
+      alt="Captura 2"
+      width="500" height="400">
+    </p>
+  </div>
+
 
 # Atencion
 Desde los puestos de atención, los medico podrán llamar a los pacientes que se encuentran en espera. Completando así el flujo del paciente en el hospital
