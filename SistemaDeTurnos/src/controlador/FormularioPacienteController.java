@@ -81,6 +81,7 @@ public class FormularioPacienteController implements Initializable,Ventana {
             }
             else {
                 Data.pacientes.offer(p1);
+                System.out.println(Data.pacientes);
                 Alerta.Confirmar("No tenemos medicos disponibles", AlertType.INFORMATION);
             }
             

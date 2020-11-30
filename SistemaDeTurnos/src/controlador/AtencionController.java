@@ -100,7 +100,7 @@ public class AtencionController implements Initializable, Ventana {
                 Logger.getLogger(AtencionController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        
+            System.out.println(Data.citas);
             TablaController.removerCita();
             Stage stage = (Stage) btnGuardar.getScene().getWindow();
             stage.close();

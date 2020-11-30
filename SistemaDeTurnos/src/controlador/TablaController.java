@@ -90,8 +90,9 @@ public class TablaController {
     }
     
     public static void removerCita(){
-        Puesto puesto = tableList.get(0).getPuesto();
-        Data.puestosAsignados.offer(puesto);
-        tableList.remove(0);
+//        Puesto puesto = tableList.get(0).getPuesto();
+//        Data.puestosAsignados.offer(puesto);
+        Data.citas.poll();
+         updateTable();
     }
 }

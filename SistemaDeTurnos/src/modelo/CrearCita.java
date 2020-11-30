@@ -14,7 +14,7 @@ public class CrearCita {
     public static boolean asignarPuestoATurno(Paciente p, Queue<Puesto> puestosAsignados ) {
         if(!puestosAsignados.isEmpty()){
             Turno turno =  GeneradorTurno.generarTurnoConPaciente(p);
-            Puesto puesto = puestosAsignados.poll();
+            Puesto puesto = puestosAsignados.peek();
             Cita cita = new Cita(turno, puesto);
             LinkedList<Cita > l = new LinkedList<>();
             citas.add(cita);
