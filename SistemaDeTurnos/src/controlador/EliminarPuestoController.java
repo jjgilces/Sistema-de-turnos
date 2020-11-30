@@ -57,9 +57,7 @@ public class EliminarPuestoController implements Initializable,Ventana {
                 Data.medicos.add(p.getMedico());
                 puestosAsignados.remove(p);
                 CBpuestoasig.getItems().remove(p);
-                System.out.println(puestosAsignados);
-                System.out.println(Data.medicos);
-                Alerta.confirmPuestoDelete();    
+                    Alerta.confirmPuestoDelete();    
             }
             else 
                 Alerta.mostrarAlerta("Este doctor se encuentra asignado a una cita", "Cannot Delete", Alert.AlertType.ERROR);

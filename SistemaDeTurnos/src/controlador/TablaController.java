@@ -6,6 +6,7 @@
 package controlador;
 
 import Serializado.Data;
+import static Serializado.Data.citas;
 import static Serializado.Data.sintomas;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -44,7 +45,7 @@ public class TablaController {
     
     private SistemaPController principal;
     
-    private  ObservableList<Cita> tableList;
+    public static  ObservableList<Cita> tableList;
     private AtencionController pantallaAternderPaciente;
     public TablaController(TableColumn<Turno, Cita> colTurno, TableColumn<Puesto, Cita> colPuesto, TableView<Cita> tbTurnoCita) {
         this.colTurno = colTurno;
@@ -61,13 +62,15 @@ public class TablaController {
         tableList = FXCollections.observableArrayList();
         tbTurnoCita.setItems(tableList);
         tbTurnoCita.setPlaceholder(new Text("No hay citas")); 
-        Sintoma s = sintomas.get(2);
+        System.out.println(sintomas);
+        Sintoma s = sintomas.get(0);
+        System.out.println(s);
         Paciente p = new Paciente("Juan", "Gilces", 10, "masculino", s);
         Medico medico = new Medico("Jose", "PEPE", "Cardiolgo");
         Puesto puesto = new Puesto(2, medico);
         Turno turno = new Turno("A209", p);
         Cita c = new Cita(turno, puesto);
-        tableList.add(c);
+        citas.add(c);
         tableList.add(c);
         tableList.add(c);
 //        tbTurnoCita.getItems().add(c);
@@ -98,4 +101,9 @@ public class TablaController {
             System.out.println(ex);
         }
     }
+    
+    public static void updateTable(Cita c) {
+        tableList.add(c);
+    }
+    
 }
