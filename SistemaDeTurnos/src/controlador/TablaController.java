@@ -5,6 +5,7 @@
  */
 package controlador;
 
+import Serializado.Data;
 import static Serializado.Data.sintomas;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -39,14 +40,17 @@ public class TablaController {
     @FXML
     private TableColumn<Puesto,Cita> colPuesto;
     @FXML
-    private TableView<Cita> tbTurnoCita;
+    private  TableView<Cita> tbTurnoCita;
     
-    private ObservableList<Cita> tableList;
-
+    private SistemaPController principal;
+    
+    private  ObservableList<Cita> tableList;
+    private AtencionController pantallaAternderPaciente;
     public TablaController(TableColumn<Turno, Cita> colTurno, TableColumn<Puesto, Cita> colPuesto, TableView<Cita> tbTurnoCita) {
         this.colTurno = colTurno;
         this.colPuesto = colPuesto;
         this.tbTurnoCita = tbTurnoCita;
+        this.tbTurnoCita.setOnMouseClicked(e -> antenderPaciente(e));
     }
 
 
@@ -56,6 +60,7 @@ public class TablaController {
         tbTurnoCita.setEditable(true);
         tableList = FXCollections.observableArrayList();
         tbTurnoCita.setItems(tableList);
+        tbTurnoCita.setPlaceholder(new Text("No hay citas")); 
         Sintoma s = sintomas.get(2);
         Paciente p = new Paciente("Juan", "Gilces", 10, "masculino", s);
         Medico medico = new Medico("Jose", "PEPE", "Cardiolgo");
@@ -65,22 +70,18 @@ public class TablaController {
         tableList.add(c);
         tableList.add(c);
         tableList.add(c);
-        tbTurnoCita.getItems().add(c);
-        tbTurnoCita.setPlaceholder(new Text("Johan"));
-    
+//        tbTurnoCita.getItems().add(c);
     }
-    public static void actualizarTabla(){
-        
-    }
+ 
      @FXML
     private void antenderPaciente(MouseEvent event) {
         try {
             Turno turnoSelect = tbTurnoCita.getSelectionModel().getSelectedItem().getTurno();
             Puesto puestoSelect = tbTurnoCita.getSelectionModel().getSelectedItem().getPuesto();      
             Stage anotherStage = new Stage();
-            FXMLLoader loader1 = new FXMLLoader(getClass().getResource("/FXMLFiles/AtenderPaciente.fxml"));
+            FXMLLoader loader1 = new FXMLLoader(getClass().getResource("/vista/Atencion.fxml"));
             Parent root1 = loader1.load();
-//            pantallaAternderPaciente = loader1.getController();
+            pantallaAternderPaciente = loader1.getController();
 //            pantallaAternderPaciente.fillInData(turnoSelect.getPaciente());
             Scene scene1 = new Scene(root1);
 //            pantallaAternderPaciente.setPrincipal(this);

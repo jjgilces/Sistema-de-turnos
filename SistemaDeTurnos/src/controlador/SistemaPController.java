@@ -1,6 +1,7 @@
 package controlador;
 
 
+import Serializado.Data;
 import static Serializado.Data.citas;
 import static Serializado.Data.sintomas;
 import java.net.URL;
@@ -64,14 +65,19 @@ public class SistemaPController implements Initializable {
     private TableColumn<Puesto,Cita> colPuesto;
     @FXML
     public TableView<Cita> tbTurnoCita= new TableView<Cita>();
-    
-    private ObservableList<Cita> tableList;
-    
+    public static TableView<Cita> tablaView ;
+    private static ObservableList<Cita> tableElement;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         new TablaController(colTurno, colPuesto, tbTurnoCita).mostrarTabla();
         new VisorVideos(mediaView).createMediaView(videos);
         new BotonesController(btnRPaciente, btnRDoctor, btnCrearPuesto, btnEliminarPuesto).setearbotones();
     }
+//     public static void  actualizarTabla(){
+//       tablaView=tbTurnoCita;  
+//       tableElement.addAll(Data.citas);
+//       tablaView.setItems(tableElement);
+//    }
 
 }

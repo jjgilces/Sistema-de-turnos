@@ -56,6 +56,7 @@ public class FormularioPacienteController implements Initializable,Ventana {
     @FXML
     private Button btnRegistrar;
 
+    private TablaController tabla;
     /**
      * Initializes the controller class.
      */
@@ -79,9 +80,11 @@ public class FormularioPacienteController implements Initializable,Ventana {
             BaseDatos.listaPacientes.add(p1);
             BaseDatos.guardarPacientes();
             //Hacer Excepcion de los turnos!
-            boolean mostrar = CrearCita.asignarPuestoATurno(p1, puestosAsignados);
-            
-            if(mostrar) Alerta.Confirmar("Espere su turno, en breve lo atendemos", AlertType.CONFIRMATION);
+            boolean mostrar = CrearCita.asignarPuestoATurno(p1, puestosAsignados);      
+            if(mostrar) {
+                Alerta.Confirmar("Espere su turno, en breve lo atendemos", AlertType.CONFIRMATION);
+//                SistemaPController.actualizarTabla();
+            }
             else {
                 Data.pacientes.offer(p1);
                 Alerta.Confirmar("No tenemos medicos disponibles", AlertType.INFORMATION);
