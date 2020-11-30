@@ -5,10 +5,12 @@
  */
 package modelo;
 
+import java.io.Serializable;
+
 /**zx
  * @author User
  */
-public class Atencion {
+public class Atencion implements Serializable {
     Paciente paciente;
     String diagnostico;
     String receta;

@@ -7,14 +7,12 @@ import java.io.Serializable;
  *
  * @author user
  */
-public class Medico implements Serializable{
-    private String nombres;
-    private String apellidos;
+public class Medico extends Persona implements Serializable {
+
     private String especialidad;
 
     public Medico(String nombres, String apellidos, String especialidad) {
-        this.nombres = nombres;
-        this.apellidos = apellidos;
+        super(nombres,apellidos);
         this.especialidad = especialidad;
     }
 

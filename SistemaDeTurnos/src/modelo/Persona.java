@@ -5,10 +5,35 @@
  */
 package modelo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author user
  */
-public class Persona {
+public class Persona implements Serializable {
+    protected String nombres;
+    protected String apellidos;
+
+    public Persona(String nombres, String apellidos) {
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+    }
+
+    public String getNombres() {
+        return nombres;
+    }
+
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
     
 }

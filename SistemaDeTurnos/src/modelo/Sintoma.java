@@ -15,7 +15,8 @@ import java.io.Serializable;
 public class Sintoma implements Serializable{
     private String nombre;
     private int prioridad;
-
+    private final long serialVersionUID = 12312312;
+   
     public Sintoma(String nombre, int prioridad) {
         this.nombre = nombre;
         this.prioridad = prioridad;

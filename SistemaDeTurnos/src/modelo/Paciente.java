@@ -7,17 +7,15 @@ import java.io.Serializable;
  *
  * @author user
  */
-public class Paciente implements Serializable {
-    private String nombres;
-    private String apellidos;
+public class Paciente  extends Persona implements Serializable{
+
     private int edad;
     private String genero;
     private Sintoma sintoma;
-    private static final long serialVersionUID = 12312312;
+ 
 
     public Paciente(String nombres, String apellidos, int edad, String genero,Sintoma sintoma)  {
-        this.nombres = nombres;
-        this.apellidos = apellidos;
+        super(nombres,apellidos);
         this.edad = edad;
         this.genero = genero;
         this.sintoma=sintoma;
@@ -32,6 +30,7 @@ public class Paciente implements Serializable {
         return nombres;
     }
 
+    @Override
     public void setNombres(String nombres) {
         this.nombres = nombres;
     }

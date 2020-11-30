@@ -1,0 +1,1 @@
+Atencion{paciente=JohanGilces, diagnostico=descanso, receta=Coronavirus}

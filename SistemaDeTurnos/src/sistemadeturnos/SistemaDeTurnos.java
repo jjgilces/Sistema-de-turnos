@@ -1,6 +1,7 @@
 package sistemadeturnos;
 
 import Serializado.Alerta;
+import Serializado.Serializable;
 import TDA.CircularSimplyLinkedList;
 import fileReader.CargarDatos;
 import java.io.FileNotFoundException;
@@ -55,7 +56,7 @@ public class SistemaDeTurnos extends Application {
         stage.setOnCloseRequest(e->{
             Optional<ButtonType> result = Alerta.confirmation();
             if(result.get()==ButtonType.OK){
-//                pController.getrController().serializarListas();
+                Serializable.serializarListas();
                 Platform.exit();
             }else{
                 e.consume();
