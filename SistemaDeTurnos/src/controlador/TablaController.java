@@ -5,6 +5,7 @@
  */
 package controlador;
 
+import Serializado.Alerta;
 import Serializado.Data;
 import static Serializado.Data.citas;
 import static Serializado.Data.sintomas;
@@ -25,6 +26,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import modelo.Cita;
+import modelo.GeneradorTurno;
 import modelo.Medico;
 import modelo.Paciente;
 import modelo.Puesto;
@@ -68,42 +70,54 @@ public class TablaController {
         Paciente p = new Paciente("Juan", "Gilces", 10, "masculino", s);
         Medico medico = new Medico("Jose", "PEPE", "Cardiolgo");
         Puesto puesto = new Puesto(2, medico);
+        Puesto puesto2 = new Puesto(1, medico);
         Turno turno = new Turno("A209", p);
+        Turno turno2 =GeneradorTurno.generarTurnoConPaciente(p);
         Cita c = new Cita(turno, puesto);
         citas.add(c);
         tableList.add(c);
         tableList.add(c);
+        Cita c2 =new Cita(turno2, puesto);
+        Cita c3 =new Cita(turno2, puesto2);
+        tableList.add(c);
+        tableList.add(c2);
+        tableList.add(c3);
 //        tbTurnoCita.getItems().add(c);
     }
  
      @FXML
     private void antenderPaciente(MouseEvent event) {
         try {
-            Turno turnoSelect = tbTurnoCita.getSelectionModel().getSelectedItem().getTurno();
-            Puesto puestoSelect = tbTurnoCita.getSelectionModel().getSelectedItem().getPuesto();      
+            Cita citaSeleccionada = tbTurnoCita.getSelectionModel().getSelectedItem();
+            Cita cita = tbTurnoCita.getItems().get(0); 
+            System.out.println(cita);
+            System.out.println(citaSeleccionada);
+            if(citaSeleccionada.equals(cita)){
             Stage anotherStage = new Stage();
             FXMLLoader loader1 = new FXMLLoader(getClass().getResource("/vista/Atencion.fxml"));
             Parent root1 = loader1.load();
             pantallaAternderPaciente = loader1.getController();
-//            pantallaAternderPaciente.fillInData(turnoSelect.getPaciente());
+            pantallaAternderPaciente.fillInData(citaSeleccionada.getTurno().getPaciente());
             Scene scene1 = new Scene(root1);
-//            pantallaAternderPaciente.setPrincipal(this);
             anotherStage.setScene(scene1);
             anotherStage.show();
+            }
         }catch(NullPointerException ex){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error Alert");
-            alert.setHeaderText("No ha seleccionado un turno o la tabla está vacía");
-            alert.setContentText("Añada pacientes para llenar la tabla o de clic en un turno existente.");
-            alert.show();
+            System.out.println(ex);
+            Alerta.mostrarAlerta("No ha seleccionado una cita ", "Error", Alert.AlertType.ERROR);
         } 
         catch (IOException ex) {
             System.out.println(ex);
         }
+        
     }
+<<<<<<< HEAD
     
     public static void updateTable(Cita c) {
         tableList.add(c);
     }
     
+=======
+
+>>>>>>> 5e62593ae99bc8b22e7ca928e709394d532a2b63
 }

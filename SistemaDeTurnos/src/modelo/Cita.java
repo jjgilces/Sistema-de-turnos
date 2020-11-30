@@ -34,7 +34,7 @@ public class Cita implements Serializable{
 
     @Override
     public String toString() {
-        return  turno + ", puesto=" + puesto + '}';
+        return  turno + "" + puesto ;
     }
     
     
