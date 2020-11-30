@@ -24,7 +24,19 @@ import modelo.Puesto;
  */
 public class PuestoController implements Initializable,Ventana {
     
-    public static int turno =1 ;
+    private int turno =1 ;
+
+    public int getTurno() {
+        return turno;
+    }
+
+    public void setTurno(int turno) {
+        this.turno = turno;
+    }
+    
+    
+    
+    
     
     @FXML
     private Button btnCrearPuesto;
@@ -50,7 +62,7 @@ public class PuestoController implements Initializable,Ventana {
         else{
         Medico med = (Medico) cbMedico.getValue();
         Puesto puesto = new Puesto(turno, med);
-        turno++;
+        setTurno(getTurno()+1);
         medicos.remove(med);
         cbMedico.getItems().remove(med);
         puestosAsignados.add(puesto);
