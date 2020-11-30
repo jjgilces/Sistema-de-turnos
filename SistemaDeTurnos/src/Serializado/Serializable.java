@@ -20,7 +20,7 @@ import static sistemadeturnos.SistemaDeTurnos.puestosAsignados;
 public abstract class Serializable {
     
     public static void  guardarObjeto(String source, Object o){
-        try (ObjectOutputStream oos=new ObjectOutputStream(new FileOutputStream("src/recursos/archivos/"+source));){
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("src/recursos/archivos/"+source))){
             oos.writeObject(o);
             oos.flush();
         } catch (FileNotFoundException ex) {
