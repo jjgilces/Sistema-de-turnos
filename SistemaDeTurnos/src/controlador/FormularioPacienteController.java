@@ -92,14 +92,14 @@ public class FormularioPacienteController implements Initializable,Ventana {
             txtEdad.clear();         
         } catch (NumberFormatException ex) {
             txtEdad.clear();
-            mostrarAlerta("Ingrese solo numeros porfavor", AlertType.ERROR);
+            mostrarAlerta("Ingrese solo numeros porfavor","Datos incorrectos", AlertType.ERROR);
         } catch (IllegalArgumentException ex) {
             if (!(isAlpha(txtNombre.getText()) && isAlpha(txtApellidos.getText()))) {
-                mostrarAlerta("En los campos Nombre y Apellido utilice unicamente letras porfavor.", AlertType.ERROR);
+                mostrarAlerta("En los campos Nombre y Apellido utilice unicamente letras porfavor.","Datos incorrectos", AlertType.ERROR);
             }
             if (Integer.parseInt(txtEdad.getText()) < 0) {
                 txtEdad.clear();
-                mostrarAlerta("Ingrese solo numeros positivos porfavor.", AlertType.ERROR);
+                mostrarAlerta("Ingrese solo numeros positivos porfavor.","Datos incorrectos", AlertType.ERROR);
             }
 
         } catch (FileNotFoundException ex) {

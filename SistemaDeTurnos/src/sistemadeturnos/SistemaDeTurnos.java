@@ -43,6 +43,7 @@ public class SistemaDeTurnos extends Application{
         BaseDatos.cargarDoctores();
         LectorSintomas.leerArchivo();
         LectorVideos.leerArchivoVideos();
+        LectorEspecialidad.leerArchivo();
         Sintoma s = sintomas.get(2);
         Paciente p = new Paciente("Juan", "Gilces", 10, "masculino", s);
         Medico medico = new Medico("Jose", "PEPE", "Cardiolgo");
@@ -65,7 +66,7 @@ public class SistemaDeTurnos extends Application{
     El siguiente metodo es solo para establacer la logica de la cola por prioridad en pacientes
     Su implementacion probablemente cambie.
     */
-//    public static void prueba(List<Paciente> listaPaciente){
+//    public static void prueba(List<Paciente> listaPaciente){%
 //        //Organizando por prioridad
 //        PriorityQueue<Paciente> colap = new PriorityQueue<>((Paciente p1, Paciente p2) -> p1.getPrioridad() - p2.getPrioridad());
 //        colap.addAll(listaPaciente);

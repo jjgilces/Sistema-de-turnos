@@ -29,13 +29,17 @@ public class Alerta {
                 + "EL MEDICO DEL PUESTO QUEDARÁ LIBRE Y SIN PUESTO, EL PUESTO QUEDARÁ ELIMINADO.");
         return alert.showAndWait();    
     }
-    public static void mostrarAlerta(String mensaje, Alert.AlertType e) {
+    public static void mostrarAlerta(String mensaje,String header, Alert.AlertType e) {
         Alert alert = new Alert(e);
         alert.setTitle("Error!");
-        alert.setHeaderText("Hubo un error en el ingreso de datos!");
+        alert.setHeaderText(header);
         alert.setContentText(mensaje);
         alert.showAndWait();
     }
+    
+    
+    
+    
      public static void Confirmar(String mensaje, Alert.AlertType e) {
         Alert alert = new Alert(e);
         alert.setTitle("Excelente!");

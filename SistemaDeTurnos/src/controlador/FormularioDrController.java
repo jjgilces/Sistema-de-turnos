@@ -15,7 +15,6 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -25,7 +24,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import static Serializado.Data.especialidades;
-import static Serializado.Data.puestosAsignados;
 import fileReader.LectorEspecialidad;
 
 /**
@@ -63,7 +61,7 @@ public class FormularioDrController implements Initializable {
     @Override
 
     public void initialize(URL url, ResourceBundle rb) {
-        loadData();
+        especialidad.getItems().setAll(especialidades);
     }
 
     @FXML
@@ -73,7 +71,7 @@ public class FormularioDrController implements Initializable {
         boolean condition2 = textFieldNull(txtApellido, labelLast, "El campo esta vacio");
         boolean condition3 = combobox(especialidad, labelEspe, "Se requiere seleccion");
         if (condition1 || condition2 || condition3) {
-            Alerta.mostrarAlerta("Los campos estan vacios", AlertType.INFORMATION);
+            Alerta.mostrarAlerta("Los campos estan vacios", "Verique su seleccion",AlertType.INFORMATION);
             txtNombre.setText(txtNombre.getText());
             txtApellido.setText(txtApellido.getText());
             
@@ -85,8 +83,6 @@ public class FormularioDrController implements Initializable {
             txtApellido.setText("");
             especialidad.getSelectionModel().clearSelection();
         }
-
-        loadData();
     }
 
     public static boolean textFieldNull(TextField text, Label label, String validate) {
@@ -112,11 +108,6 @@ public class FormularioDrController implements Initializable {
         }
         l.setText(val);
         return isNull;
-    }
-
-    private void loadData() {
-        LectorEspecialidad.leerArchivo();
-        especialidad.getItems().setAll(especialidades);
     }
 
     @FXML
